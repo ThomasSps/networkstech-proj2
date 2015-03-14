@@ -4,9 +4,9 @@
 	$database = new DB_Provider();
 	$database -> connect();
 
-	$query = sprintf( "INSERT INTO 'user' ( '%s', '%s' )", mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( $_POST["pass"] ) );
+	$query = sprintf( "INSERT INTO 'user' ( '%s', '%s' )", mysql_real_escape_string( isset($_POST["uname"]) ), mysql_real_escape_string( isset($_POST["pass"]) ) );
 
-	mysql_query($database, $query);
+	mysql_query( $query );
 
 	$database -> close(); 
 ?>
