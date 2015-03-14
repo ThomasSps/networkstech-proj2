@@ -18,12 +18,13 @@
       		<img src="img/login/avatar.png">
 		</div>
 		<!-- TODO: Validate form script -->
-		<form action="signup.php"   method="post">
-			<input id="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
+		<form action="signup.php" onsubmit="return validateSignupForm()"  method="post">
+			<input id="uname" name="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
+
 			<div class="bar">
 				<i></i>
 			</div>
-			<input id="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" autocomplete = off>
+			<input id="pass" name="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" autocomplete = off>
 			<div class="bar">
 				<i></i>
 			</div>		
