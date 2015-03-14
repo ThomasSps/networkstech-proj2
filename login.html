@@ -17,13 +17,18 @@
 		<div class="avatar">
       	<img src="img/login/avatar.png">
 		</div>
-		<input type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-		<div class="bar">
+
+		<!-- TODO: Implement validateForm() -->
+		<form action="login.php" method = "POST" onsubmit="return validateForm()" >
+			<input id = "uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
+			<div class="bar">
 			<i></i>
-		</div>
-		<input type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-		<br>
-		<button>Log in</button>
+			</div>
+			<input id = "pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" autocomplete = off>
+			<br>
+			<button type = "submit" >Log in</button>
+		</form>
+
 		<button>Not a member? Sign up!</button>
 	</div>
 
