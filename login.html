@@ -5,11 +5,9 @@
 
   <meta charset="UTF-8">
 
-  <title>CodePen - Login </title>
+  <title>Asanz - Login </title>
 
-  <link rel="stylesheet" href="css/reset.css">
-
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -17,19 +15,17 @@
 
   <div class="wrap">
 		<div class="avatar">
-      <img src="https://homepages.thm.de/~hg12780/avatar.JPG">
+      	<img src="img/login/avatar.png">
 		</div>
-		<input type="text" placeholder="username" required>
+		<input type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
 		<div class="bar">
 			<i></i>
 		</div>
-		<input type="password" placeholder="password" required>
-		<a href="" class="forgot_link">forgot ?</a>
+		<input type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+		<br>
 		<button>Log in</button>
 		<button>Not a member? Sign up!</button>
 	</div>
-
-  <script src="js/index.js"></script>
 
 </body>
 

@@ -6,7 +6,7 @@
 }
 
 body {
-	background: #448ed3 ;
+	background: #939393 ;
 	font-family: "Lato" ;
 }
 .wrap {
@@ -21,7 +21,7 @@ body {
 	width: 65px;
 	border-radius: 100px;
 	height: 65px;
-	background: #448ed3 ;
+	background: #939393;
 	position: relative;
 	bottom: -15px;
 }
@@ -36,8 +36,8 @@ body {
 .wrap input {
 	border: none;
 	background: #fff;
-  font-family:Lato ;
-  font-weight:700 ;
+  	font-family:Lato ;
+  	font-weight:700 ;
 	display: block;
 	height: 40px;
 	outline: none;
@@ -63,28 +63,19 @@ body {
 .wrap input[type="password"] {
 	border-radius: 0px 0px 7px 7px ;
 }
-.forgot_link {
-	color: #83afdf ;
-	color: #83afdf;
-	text-decoration: none;
-	font-size: 11px;
-	position: relative;
-	left: 193px;
-	top: -36px;
-}
 .wrap button {
 	width: 100%;
 	margin-bottom: 10px;
 	border-radius: 7px;
-	background: #b6ee65;
+	background: #dedede;
 	text-decoration: center;
 	border: none;
-	color: #51771a;
-  margin-top:-5px;
+	color: #000000;
+  	margin-top:-5px;
 	padding-top: 14px;
 	padding-bottom: 14px;
 	outline: none;
 	font-size: 13px;	
-	border-bottom: 3px solid #307d63;
+	border-bottom: 3px solid #585858;
 	cursor: pointer;
 }
