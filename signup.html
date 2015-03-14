@@ -15,18 +15,22 @@
 
   <div class="wrap">
 		<div class="avatar">
-      	<img src="img/login/avatar.png">
+      		<img src="img/login/avatar.png">
 		</div>
-		<input id="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-		<div class="bar">
-			<i></i>
-		</div>
-		<input id="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-		<div class="bar">
-			<i></i>
-		</div>		<input id="repass" type="password" placeholder="Retype Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-		<br>
-		<button>Sign me up!</button>
+		<!-- TODO: Validate form script -->
+		<form action="signup.php" onsubmit="return validateSignupForm()"  method="POST">
+			<input id="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+			<div class="bar">
+				<i></i>
+			</div>
+			<input id="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+			<div class="bar">
+				<i></i>
+			</div>		
+			<input id="repass" type="password" placeholder="Retype Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Retype Password'">
+			<br>
+			<button type="submit" id="signup">Sign me up!</button>
+		</form>
 	</div>
 
 </body>
