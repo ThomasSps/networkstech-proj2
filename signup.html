@@ -19,15 +19,15 @@
 		</div>
 		<!-- TODO: Validate form script -->
 		<form action="signup.php" onsubmit="return validateSignupForm()"  method="POST">
-			<input id="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+			<input id="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 			<div class="bar">
 				<i></i>
 			</div>
-			<input id="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+			<input id="pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" autocomplete = off>
 			<div class="bar">
 				<i></i>
 			</div>		
-			<input id="repass" type="password" placeholder="Retype Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Retype Password'">
+			<input id="repass" type="password" placeholder="Retype Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Retype Password'" autocomplete = off>
 			<br>
 			<button type="submit" id="signup">Sign me up!</button>
 		</form>
