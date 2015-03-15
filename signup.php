@@ -4,7 +4,7 @@
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 	
-	$extra_1 = 'login.html';
+	$extra_1 = 'login.php';
 	$extra_2 = 'signup.html'; 
 
 	$gg = 0;
@@ -12,37 +12,41 @@
 	$database = new DB_Provider();
 	$database -> connect();
 
-	if( isset($_POST["uname"]) && $_POST["pass"] )
+	if( isset($_POST["uname"]) && isset($_POST["pass"]) )
 	{
-		$query = "SELECT `uname` FROM `user`";
+		$query = 'SELECT `uname` FROM `user` WHERE `uname`="' . $_POST['uname'] . '"';
 		$result = mysql_query( $query );
 
-		if( !$result ) {
+		if( !$result ) 
+		{
 			echo "DB Error, could not query the database\n";
 		    echo 'MySQL Error: ' . mysql_error();
 		    exit;
 		}
-		else {
-			if( mysql_num_rows( $result ) == 0 ) {
-			
+		else 
+		{
+			if( mysql_num_rows( $result ) == 0 ) 
+			{
 				//clear the query from previous
 				$query = "";
-				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`) VALUES ( '%s', '%s')", mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( password_hash($_POST["pass"], PASSWORD_DEFAULT) ) );
+				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`) VALUES ( '%s', '%s')", 
+					mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( password_hash($_POST["pass"], PASSWORD_DEFAULT) ) );
 
 				$result = mysql_query( $query );
 
-				if( !$result ) {
+				if( !$result ) 
+				{
 				    echo "DB Error, could not query the database\n";
 				    echo 'MySQL Error: ' . mysql_error();
 				    exit;
 				}
-				else
-					$gg += 1;
+				else 
+				{
+					$gg++;
+				}
 			}
 		}
 	}
-	else
-		return false;
 
 	$database -> close(); 
 
