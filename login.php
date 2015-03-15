@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
 
   <title>Asanz - Login</title>
-
+  <script src="validateLogIn.js"></script>
   <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -28,7 +28,7 @@
 
 
 		<!-- TODO: Implement validateForm(), login.php -->
-		<form action="login.php" method = "POST" onsubmit="return validateForm()" >
+		<form action="login.php" method = "POST" name="LogInForm" onsubmit="return validateLogIn()" >
 			<input name = "uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 			<div class="bar">
 			<i></i>
