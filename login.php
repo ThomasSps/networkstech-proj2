@@ -25,9 +25,6 @@
 		<div class="avatar">
       	<img src="img/login/avatar.png">
 		</div>
-
-
-		<!-- TODO: Implement validateForm(), login.php -->
 		<form action="login.php" method = "POST" name="LogInForm" onsubmit="return validateLogIn()" >
 			<input name = "uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 			<div class="bar">
