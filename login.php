@@ -1,14 +1,7 @@
-<?php
-	
-	include 'access_control.php';
-	
-?>
-
+<?php include 'access_control.php'; ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
 
   <meta charset="UTF-8">
@@ -34,7 +27,7 @@
 			</div>
 			<input name = "pass" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" autocomplete = off>
 			<br>
-			<button type = "submit" >Log in</button>
+			<button type = "submit">Log in</button>
 		</form>
 
 		<button onclick="location.href = 'signup.html';">Not a member? Sign up!</button>

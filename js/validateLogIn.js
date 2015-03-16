@@ -5,7 +5,7 @@ function validateLogIn()
     var pass = document.forms["LogInForm"]["pass"].value;
     if (uname == null || uname == "") 
     {
-        alert("Username is Recquired");
+        alert("Username is required");
         return false;
     }
     if (uname.length < 4 || uname.length > 20)
@@ -20,7 +20,7 @@ function validateLogIn()
     }
     if (pass == null || pass == "") 
     {
-        alert("Password is Recquired");
+        alert("Password is required");
         return false;
     }
     if (pass.length < 4 || pass.length > 16)
