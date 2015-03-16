@@ -10,7 +10,7 @@ function validateSignUp()
         alert("Username is Recquired");
         return false;
     }
-    if (uname.length <= 4 || uname.length >= 20)
+    if (uname.length < 4 || uname.length > 20)
     {
         alert("Username Must Between 4 and 20 Characters");
         return false;
@@ -25,14 +25,14 @@ function validateSignUp()
         alert("Password is Recquired");
         return false;
     }
-    if (pass.length <= 4 || pass.length >= 16)
+    if (pass.length < 4 || pass.length > 16)
     {
         alert("Password Must Between 4 and 16 Characters");
         return false;
     }
     if (repass == null || repass == "") 
     {
-        alert("Please ReEnter The Password");
+        alert("Please Re-enter The Password");
         return false;
     }
     if (pass != repass)

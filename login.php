@@ -15,6 +15,8 @@
 
   <title>Asanz - Login</title>
   
+  <script src="js/validateLogIn.js"></script>
+  
   <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -25,7 +27,7 @@
 		<div class="avatar">
       	<img src="img/login/avatar.png">
 		</div>
-		<form  name="LogInForm" action="login.php" method = "POST">
+		<form  name="LogInForm" onsubmit="return validateLogIn()" action="login.php" method = "POST">
 			<input name = "uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 			<div class="bar">
 			<i></i>
