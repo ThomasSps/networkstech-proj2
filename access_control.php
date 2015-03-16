@@ -15,6 +15,7 @@
 	$_SESSION['pass'] = $pass;
 
 
+
 	// AUTHENTICATE USER
 
 	$query = "SELECT * FROM `user` WHERE `uname` = '$user'";
@@ -38,29 +39,21 @@
 		}
 		else {
 
-			// INVALID PASSWORD -> LOGIN TODO: MESSAGE WRONG PASS
+			// INVALID PASSWORD -> LOGIN 
 			unset($_SESSION['uname']);
 			unset($_SESSION['pass']);
+			$_SESSION['Error'] = "Wrong Username or Password";
 
 			if( basename($_SERVER['PHP_SELF']) != "login.php" )
+				
 				header("Location:  login.php");
 		}
 	}
 	else {
-		//NO USER FOUND -> LOGIN  TODO: MESSAGE WRONG USER
+		//NO USER FOUND -> LOGIN  
 		unset($_SESSION['uname']);
 		unset($_SESSION['pass']);
-
-		if (ini_get("session.use_cookies")) {
-	    		
-	    		$params = session_get_cookie_params();
-	    		setcookie(session_name(), '', time() - 42000,
-	        	$params["path"], $params["domain"],
-	        	$params["secure"], $params["httponly"]
-	    		);
-		}	
-		session_destroy();
-
+		
 		if( basename($_SERVER['PHP_SELF']) != "login.php" )
 			header("Location:  login.php");
 	}

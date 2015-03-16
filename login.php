@@ -31,8 +31,10 @@
 		</form>
 
 		<button onclick="location.href = 'signup.html';">Not a member? Sign up!</button>
+		<div style="color:#CC0000" align='center'><?php echo $_SESSION['Error']; ?></div> 
 	</div>
 
 </body>
+
 
 </html>
