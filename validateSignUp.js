@@ -25,7 +25,7 @@ function validateSignUp()
         alert("Password is Recquired");
         return false;
     }
-    if (uname.length <= 4 || uname.length >= 16)
+    if (pass.length <= 4 || pass.length >= 16)
     {
         alert("Password Must Between 4 and 16 Characters");
         return false;
