@@ -53,7 +53,7 @@
 		//NO USER FOUND -> LOGIN  
 		unset($_SESSION['uname']);
 		unset($_SESSION['pass']);
-		$_SESSION['Error'] = "Wrong Username or Password";
+		
 		if( basename($_SERVER['PHP_SELF']) != "login.php" )
 			header("Location:  login.php");
 	}
