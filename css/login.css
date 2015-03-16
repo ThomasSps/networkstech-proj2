@@ -58,9 +58,11 @@ body {
 	background: #d1d1d1;
 }
 .wrap input[type="text"] {
+	opacity: 0.8;
 	border-radius: 7px 7px 0px 0px ;
 }
 .wrap input[type="password"] {
+	opacity: 0.8;
 	border-radius: 0px 0px 7px 7px ;
 }
 .wrap button {
