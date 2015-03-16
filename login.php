@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
 
   <title>Asanz - Login</title>
-  <script src="validateLogIn.js"></script>
+  
   <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -25,7 +25,7 @@
 		<div class="avatar">
       	<img src="img/login/avatar.png">
 		</div>
-		<form action="login.php" method = "POST" name="LogInForm" onsubmit="return validateLogIn()" >
+		<form  name="LogInForm" action="login.php" method = "POST">
 			<input name = "uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 			<div class="bar">
 			<i></i>

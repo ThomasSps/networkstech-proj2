@@ -6,7 +6,9 @@
   <meta charset="UTF-8">
 
   <title>Asanz - Signup</title>
+  
   <script src="validateSignUp.js"></script>
+  
   <link rel="stylesheet" href="css/signup.css">
 
 </head>
@@ -17,7 +19,7 @@
 		<div class="avatar">
       		<img src="img/login/avatar.png">
 		</div>
-		<form action="signup.php" name="SignUpForm" onsubmit="return validateSignUp()"  method="post">
+		<form name="SignUpForm"  onsubmit="return validateSignUp()" action="signup.php" method="post">
 			<input id="uname" name="uname" type="text" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" autocomplete = off>
 
 			<div class="bar">
