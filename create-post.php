@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="css/navbar.css">
   
   <script src="js/chars_left.js"></script>
-  <script src="validatePost.js"></script>
+  <script src="js/validatePost.js"></script>
 </head>
 <html>
 	<body>
 	<header id="create-post-page">
 		<nav class="dropdownmenu">
 		  <ul>
-		    <li><a id="create-post" href="#" onclick="document.forms['newpost'].submit();">+Creating post</a></li>
+		    <li><a id="create-post" href="#" onclick="return validatePost()">+Creating post</a></li>
 		    <li><a href="index.php">Home</a></li>
 		    <li><a href="">Dashboard</a></li>
 		    

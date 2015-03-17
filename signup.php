@@ -29,7 +29,7 @@
 			{
 				//clear the query from previous
 				$query = "";
-				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`, `since`) VALUES ( '%s', '%s')", 
+				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`) VALUES ( '%s', '%s')", 
 					mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( password_hash($_POST["pass"], PASSWORD_DEFAULT) ) );
 
 				$result = mysql_query( $query );

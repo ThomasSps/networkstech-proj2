@@ -1,19 +1,19 @@
+function validatePost()
+{
+
 var title = document.forms["newpost"]["title"].value;
 var text = document.forms["newpost"]["text"].value;
-var button  = document.getElementsByTagName("li");
 
-li[create-post].addEventListener("click", validatePost);
-
-function validatePost() 
-{
-    if (title == null || title == "") 
+if (title == null || title == "")
     {
         alert("Post Title Can't Be Empty");
-        return false;
+        return false
     }
-    if (text == null || text == "") 
+if (text == null || text == "")
     {
         alert("You Can't Create An Empty Post");
-        return false;
+        return false
     }
+document.getElementById("newpost").submit();
+
 }
