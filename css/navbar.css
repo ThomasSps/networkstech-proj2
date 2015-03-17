@@ -42,7 +42,7 @@
 }
 li:hover ul#submenu {
 	opacity: 1;
-	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
+	top: 40px;
 	visibility: visible;
 }
 #submenu li {
@@ -54,4 +54,14 @@ li:hover ul#submenu {
 }
 #submenu a {
 	background-color:#000000;
+}
+
+#create-post-page .dropdownmenu a#create-post
+{
+	background-color: #ff8e69;
+}
+
+#create-post-page .dropdownmenu li:hover a#create-post
+{
+	background-color: #a8e550;
 }

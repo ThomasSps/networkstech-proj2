@@ -9,27 +9,27 @@
   <link rel="stylesheet" href="css/navbar.css">
 </head>
 <html>
-	<nav class="dropdownmenu">
-	  <ul>
-	    <li><a href="create-post.php">+Post</a></li>
-	    <li><a href="">Dashboard</a></li>
-		    
-	    <!-- A sub-list item 
-	    <li><a href="">Menu Item</a>
-	      <ul id="submenu">
-	        <li><a href="">Submenu item</a></li>
-	      </ul>
-	    </li> -->
-
-	    <li><a href="logout.php">Logout</a></li>
-	  </ul>
-	</nav>
 	<body>
-		<article>
-			
-		</article>
-		<aside>
-			
-		</aside>
+	<header>
+		<nav class="dropdownmenu">
+		  <ul>
+		    <li><a href="create-post.php">+Post</a></li>
+		    <li><a href="">Dashboard</a></li>
+			    
+		    <!-- A sub-list item 
+		    <li><a href="">Menu Item</a>
+		      <ul id="submenu">
+		        <li><a href="">Submenu item</a></li>
+		      </ul>
+		    </li> -->
+
+		    <li><a href="logout.php">Logout</a></li>
+		  </ul>
+		</nav>
+	</header>
+	<article>
+		
+		
+	</article>
 	</body>
 </html>
