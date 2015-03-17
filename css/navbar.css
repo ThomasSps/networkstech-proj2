@@ -30,7 +30,7 @@
 	transition: all .25s ease;
 }
 .dropdownmenu li:hover a {
-	background: #ff8e69;
+	background: #69e5ff; /* #ff8e69; */
 }
 #submenu {
 	left: 0;
@@ -50,7 +50,7 @@ li:hover ul#submenu {
 	width: 100%;
 }
 #submenu a:hover {
-	background: #e57550;
+	background: #5ecee5; /* #e57550; */
 }
 #submenu a {
 	background-color:#000000;
@@ -60,7 +60,7 @@ li:hover ul#submenu {
 #index-page .dropdownmenu a#go-home,
 #user-page .dropdownmenu a#user-profile
 {
-	background-color: #ff8e69;
+	background-color: #69e5ff; /* #ff8e69; */
 }
 
 #create-post-page .dropdownmenu li:hover a#create-post
@@ -72,5 +72,5 @@ li:hover ul#submenu {
 #index-page .dropdownmenu li:hover a#logout,
 #user-page .dropdownmenu li:hover a#logout
 {
-	background-color: #e55050;
+	background-color: #ff5151;
 }

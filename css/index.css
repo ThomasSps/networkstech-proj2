@@ -50,11 +50,11 @@ dl#posts-array {
   height: 80%;
   margin: 0;
   overflow:hidden; 
-  overflow-y:scroll;
+  overflow-y:auto;
 }
 
 dl#posts-array post {
-  margin-bottom: 10px;
+ /* margin-bottom: 10px; */
 }
 
 dl#posts-array  dt {
