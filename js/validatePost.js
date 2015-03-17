@@ -1,8 +1,11 @@
+var title = document.forms["newpost"]["title"].value;
+var text = document.forms["newpost"]["text"].value;
+var button  = document.getElementsByTagName("li");
+
+li[create-post].addEventListener("click", validatePost);
+
 function validatePost() 
 {
-    var title = document.forms["newpost"]["title"].value;
-    var text = document.forms["newpost"]["text"].value;
-    
     if (title == null || title == "") 
     {
         alert("Post Title Can't Be Empty");
