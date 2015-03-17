@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/navbar.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <html>
 	<body>
@@ -17,6 +16,7 @@
 		<nav class="dropdownmenu">
 		  <ul>
 		    <li><a href="create-post.php">+Post</a></li>
+		    <li><a id="go-home" href="index.php">Home</a></li>
 		    <li><a href="">Dashboard</a></li>
 			    
 		    <!-- A sub-list item 
@@ -26,17 +26,18 @@
 		      </ul> 
 		    </li> -->
 
-		    <li><a href="logout.php">Logout</a></li>
+		    <li><a id="logout" href="logout.php">Logout</a></li>
 		  </ul>
 		</nav>
 	</header>
 	<article>
 		<div id="wrapper">
 		    <div id="leftcolumn">
-		        Left
+		    	<h1>Recent blog posts</h1>
+		        <?php include 'fill-posts.php' ?>
 		    </div>
 		    <div id="rightcolumn">
-		        Right
+		       
 		    </div>
 		</div>
 	</article>

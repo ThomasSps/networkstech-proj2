@@ -18,16 +18,30 @@ body {
     position: absolute;
     top: 40px;
     bottom: 0px;
-    color: white;
+    color: black;
 }
 #leftcolumn {
     left: 0px;
     width: 70%;
-    background-color: #111;
 }
 #rightcolumn {
     right: 0px;
     width: 30%;
-    background-color: #777;
+    opacity: 0.1;
+    background-color: #111;
 }
 
+#leftcolumn h1, h2 {
+  font-family: "Lato";
+;
+  color: gray;
+
+  margin-left: 5%;
+}
+
+#leftcolumn h1 {
+    font-size: 200%
+}
+#leftcolumn h2 {
+    font-size: 100%
+}

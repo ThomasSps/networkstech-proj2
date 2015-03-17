@@ -37,4 +37,6 @@
 	}
 
 	header('Location: index.php');
+
+	$database->close();
 ?>

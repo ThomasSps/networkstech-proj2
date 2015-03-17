@@ -56,7 +56,8 @@ li:hover ul#submenu {
 	background-color:#000000;
 }
 
-#create-post-page .dropdownmenu a#create-post
+#create-post-page .dropdownmenu a#create-post,
+#index-page .dropdownmenu a#go-home
 {
 	background-color: #ff8e69;
 }
@@ -64,4 +65,10 @@ li:hover ul#submenu {
 #create-post-page .dropdownmenu li:hover a#create-post
 {
 	background-color: #a8e550;
+}
+
+#create-post-page .dropdownmenu li:hover a#logout,
+#index-page .dropdownmenu li:hover a#logout
+{
+	background-color: #e55050;
 }
