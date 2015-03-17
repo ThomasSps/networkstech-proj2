@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   
   <script src="js/chars_left.js"></script>
+  <script src="validatePost.js"></script>
 </head>
 <html>
 	<body>
@@ -32,7 +33,7 @@
 		</nav>
 	</header>
 		<article>
-			<form name="newpost" id="newpost" action="commit-post.php" method="post">
+			<form name="newpost" id="newpost" onsubmit="return validatePost()" action="commit-post.php" method="post">
 				<div id="subject">
 					<input type="text" name="title" placeholder="Subject title" required size="80">
 				</div>
