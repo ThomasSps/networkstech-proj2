@@ -6,30 +6,28 @@
 }
 
 body {
-    background: #FFFFFF ;
+  background: #FFFFFF ;
 	font-family: "Lato" ;
-	margin: 0;
+  margin: 0;
 }    
 #wrapper {
-	position: absolute;
-	top: 40px;
-    width: 1280px;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 #leftcolumn, #rightcolumn {
-    border: 1px solid white;
-    float: left;
-    min-height: 450px;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
     color: white;
 }
 #leftcolumn {
-     width: 70%;
-     background-color: #111;
+    left: 0px;
+    width: 70%;
+    background-color: #111;
 }
 #rightcolumn {
-     width: 29%;
-     background-color: #777;
-     margin-right: 0;
+    right: 0px;
+    width: 30%;
+    background-color: #777;
 }
 

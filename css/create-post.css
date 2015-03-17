@@ -12,8 +12,8 @@ body {
 
 article {
 	position: absolute;
-	height: 90%;
-	width: 99%;
+	bottom: 0px;
+	width: 100%;
 	top: 40px;
 }
 
