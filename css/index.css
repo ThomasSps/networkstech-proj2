@@ -8,8 +8,26 @@
 body {
 	background: #FFFFFF ;
 	font-family: "Lato" ;
+	height: 100%;
+	width: 100%;
 }
 
 article {
-	background: #FFFFFF;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	width: 65%;
+	height: 100%;
+	float: left;
+	background: red;
+}
+
+aside {
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	width: 35%;
+	height: 100%;
+	float: left;
+	background: green;
 }
