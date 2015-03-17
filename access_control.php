@@ -85,16 +85,10 @@
 		//NO USER FOUND
 		unset($_SESSION['uname']);
 		unset($_SESSION['pass']);
-<<<<<<< HEAD
 
 		$_SESSION['Error'] = 1;
 
 		if( basename($_SERVER['PHP_SELF']) != "login.php" ){
-
-=======
-		
-		if( basename($_SERVER['PHP_SELF']) != "login.php" )
->>>>>>> ce5cc3820e2c026ff2ab635b75757f4fe745569b
 			header("Location:  login.php");
 
 		}
