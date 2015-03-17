@@ -2,7 +2,7 @@ var title = document.forms["newpost"]["title"].value;
 var text = document.forms["newpost"]["text"].value;
 var button  = document.getElementsByTagName("li");
 
-li[create-post].addEventListener("click", validatePost);
+button[1].addEventListener("click", validatePost);
 
 function validatePost() 
 {
