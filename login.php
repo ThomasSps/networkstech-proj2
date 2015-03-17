@@ -1,4 +1,7 @@
-<?php include 'access_control.php'; ?>
+<?php include 'access_control.php';
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +34,22 @@
 		</form>
 
 		<button onclick="location.href = 'signup.html';">Not a member? Sign up!</button>
-		<div style="color:#CC0000" align='center'><?php echo $_SESSION['Error']; ?></div> 
+
+		<div id="error" style="color:#CC0000" align='center'>
+	
+			<?php 
+				
+				if ($_SESSION['Error'] == 1){
+
+					echo "Wrong Username or Password";
+					$_SESSION['Error'] = 0; 
+				}
+				
+
+			?>
+
+		</div> 
+
 	</div>
 
 </body>

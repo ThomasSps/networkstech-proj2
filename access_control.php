@@ -8,11 +8,25 @@
 
 	session_start();
 
-	$user = isset($_POST['uname']) ? $_POST['uname'] : $_SESSION['uname'];
+	$sessiontry = 0;
+
+
+	if (isset($_POST['uname'])){
+
+		$user = $_POST['uname'];
+	}
+	else{
+
+		$user = $_SESSION['uname'];
+		$sessiontry = 1;
+	}
+
 	$pass = isset($_POST['pass']) ? $_POST['pass'] : $_SESSION['pass'];
 
 	$_SESSION['uname'] = $user;
 	$_SESSION['pass'] = $pass;
+	$_SESSION['Error'] = 0;
+	
 
 
 
@@ -42,20 +56,44 @@
 			// INVALID PASSWORD -> LOGIN 
 			unset($_SESSION['uname']);
 			unset($_SESSION['pass']);
-			$_SESSION['Error'] = "Wrong Username or Password";
 
-			if( basename($_SERVER['PHP_SELF']) != "login.php" )
-				
+			$_SESSION['Error'] = 1;
+
+			if( basename($_SERVER['PHP_SELF']) != "login.php" ){
+
+
 				header("Location:  login.php");
+
+			}
+		}
+	}
+	else if ($count == 0 && $sessiontry == 1) {
+		//NO SESSION FOUND -> LOGIN  
+		unset($_SESSION['uname']);
+		unset($_SESSION['pass']);
+
+		$_SESSION['Error'] = 0;
+
+		if( basename($_SERVER['PHP_SELF']) != "login.php" ){
+
+			header("Location:  login.php");
+
 		}
 	}
 	else {
-		//NO USER FOUND -> LOGIN  
+
+		//NO USER FOUND
 		unset($_SESSION['uname']);
 		unset($_SESSION['pass']);
-		$_SESSION['Error'] = "Wrong Username or Password";
-		if( basename($_SERVER['PHP_SELF']) != "login.php" )
+
+		$_SESSION['Error'] = 1;
+
+		if( basename($_SERVER['PHP_SELF']) != "login.php" ){
+
 			header("Location:  login.php");
+
+		}
+
 	}
 
 ?>
