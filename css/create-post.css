@@ -12,9 +12,8 @@ body {
 
 article {
 	position: absolute;
+	top:40px;
 	bottom: 0px;
-	width: 100%;
-	top: 40px;
 }
 
 hr {
@@ -42,7 +41,7 @@ hr {
 }
 
 #newpost {
-	width: 100%;
+	width: 99%;
 	height: 100%;
 }
 
@@ -61,7 +60,7 @@ hr {
 }
 
 #content textarea{
-	width: 100vw;
+	width: 90vw;
     height: 75vh;
 	border: 0px;
     bottom: 100px;
