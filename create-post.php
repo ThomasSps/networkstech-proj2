@@ -8,13 +8,15 @@
   
   <link rel="stylesheet" href="css/create-post.css">
   <link rel="stylesheet" href="css/navbar.css">
+  
+  <script src="js/chars_left.js"></script>
 </head>
 <html>
 	<body>
-	<header>
+	<header id="create-post-page">
 		<nav class="dropdownmenu">
 		  <ul>
-		    <li><a href="#" onclick="document.forms['newpost'].submit();">+Creating post</a></li>
+		    <li><a id="create-post" href="#" onclick="document.forms['newpost'].submit();">+Creating post</a></li>
 		    <li><a href="index.php">Home</a></li>
 		    <li><a href="">Dashboard</a></li>
 		    
@@ -36,12 +38,12 @@
 				</div>
 				<hr>
 				<div id="content"> 
-					<textarea name="text" placeholder="Enter text..." required rows="14" cols="40"></textarea>
+					<textarea name="text" placeholder="Enter text..." required rows="14" cols="40" onKeyDown="textCount( document.newpost.text, document.newpost.left, 160)" onKeyUp="textCount( document.newpost.text, document.newpost.left, 160)"></textarea>
 				<div>
 				<hr>
 			</form>
 
-			<div id="chars"> <i>Characters left: </i> </div>
+			<div id="chars"> Characters left: <input name="left" type="text" size="3" maxlength="3" value="160" readonly=""></div>
 		</article>
 	</body>
 </html>

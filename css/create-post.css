@@ -34,6 +34,13 @@ hr {
 	right: 5%;
 }
 
+#chars input {
+	font-family: "Lato";
+	color: gray;
+	font-size: 90%;
+	border: 0px;
+}
+
 #newpost {
 	width: 100%;
 	height: 100%;
