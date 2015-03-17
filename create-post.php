@@ -17,7 +17,7 @@
 	<header id="create-post-page">
 		<nav class="dropdownmenu">
 		  <ul>
-		    <li><a id="create-post" href="#" onclick="document.forms['newpost'].submit();">+Creating post</a></li>
+		    <li><a id="create-post" href="#" onclick="return validatePost()">+Creating post</a></li>
 		    <li><a href="index.php">Home</a></li>
 		    <li><a href="">Dashboard</a></li>
 		    <li><a href="logout.php">Logout</a></li>
