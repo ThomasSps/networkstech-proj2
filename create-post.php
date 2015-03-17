@@ -20,14 +20,6 @@
 		    <li><a id="create-post" href="#" onclick="document.forms['newpost'].submit();">+Creating post</a></li>
 		    <li><a href="index.php">Home</a></li>
 		    <li><a href="">Dashboard</a></li>
-		    
-		    <!-- A sub-list item 
-		    <li><a href="">Menu Item</a>
-		      <ul id="submenu">
-		        <li><a href="">Submenu item</a></li>
-		      </ul>
-		    </li> -->
-			
 		    <li><a href="logout.php">Logout</a></li>
 		  </ul>
 		</nav>

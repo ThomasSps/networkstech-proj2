@@ -6,28 +6,30 @@
 }
 
 body {
-	background: #FFFFFF ;
+    background: #FFFFFF ;
 	font-family: "Lato" ;
-	height: 100%;
-	width: 100%;
-}
-
-article {
+	margin: 0;
+}    
+#wrapper {
 	position: absolute;
 	top: 40px;
-	left: 0px;
-	width: 65%;
-	height: 100%;
-	float: left;
-	background: red;
+    width: 1280px;
+    margin: 0;
+    padding: 0;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height: 450px;
+    color: white;
+}
+#leftcolumn {
+     width: 70%;
+     background-color: #111;
+}
+#rightcolumn {
+     width: 29%;
+     background-color: #777;
+     margin-right: 0;
 }
 
-aside {
-	position: absolute;
-	top: 40px;
-	right: 0px;
-	width: 35%;
-	height: 100%;
-	float: left;
-	background: green;
-}

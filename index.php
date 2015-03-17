@@ -13,7 +13,7 @@
 </head>
 <html>
 	<body>
-	<header>
+	<header id="index-page">
 		<nav class="dropdownmenu">
 		  <ul>
 		    <li><a href="create-post.php">+Post</a></li>
@@ -23,7 +23,7 @@
 		    <li><a href="">Menu Item</a>
 		      <ul id="submenu">
 		        <li><a href="">Submenu item</a></li>
-		      </ul>
+		      </ul> 
 		    </li> -->
 
 		    <li><a href="logout.php">Logout</a></li>
@@ -31,10 +31,14 @@
 		</nav>
 	</header>
 	<article>
-		
+		<div id="wrapper">
+		    <div id="leftcolumn">
+		        Left
+		    </div>
+		    <div id="rightcolumn">
+		        Right
+		    </div>
+		</div>
 	</article>
-	<aside>
-		
-	</aside>
 	</body>
 </html>
