@@ -1,14 +1,16 @@
-<?php include 'access_control.php'; ?>
+<?php include ('access_control.php'); ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Asanz - Posts</title>
+ 	<meta charset="UTF-8">
+	<title>Asanz - Posts</title>
 
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/navbar.css">
 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/autoUpdate.js"></script>
 </head>
 <html>
 	<body>
@@ -17,7 +19,7 @@
 		  <ul>
 		    <li><a href="create-post.php">+Post</a></li>
 		    <li><a id="go-home" href="index.php">Home</a></li>
-		    <li><a href="">Dashboard</a></li>
+		    <li><a href="user-profile.php">Dashboard</a></li>
 			    
 		    <!-- A sub-list item 
 		    <li><a href="">Menu Item</a>
@@ -34,10 +36,9 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Recent blog posts</h1>
-		        <?php include 'fill-posts.php' ?>
+		    	<dl id="posts-array"> <?php include 'fill-posts.php'; ?> </dl>
 		    </div>
 		    <div id="rightcolumn">
-		       
 		    </div>
 		</div>
 	</article>

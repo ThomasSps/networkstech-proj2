@@ -27,16 +27,16 @@
 		<article>
 			<form name="newpost" id="newpost" action="commit-post.php" method="post">
 				<div id="subject">
-					<input type="text" name="title" placeholder="Subject title" required size="80">
+					<input type="text" name="title" placeholder="Subject title" required size="64">
 				</div>
 				<hr>
 				<div id="content"> 
-					<textarea name="text" placeholder="Enter text..." required rows="14" cols="40" onKeyDown="textCount( document.newpost.text, document.newpost.left, 160)" onKeyUp="textCount( document.newpost.text, document.newpost.left, 160)"></textarea>
+					<textarea name="text" placeholder="Enter text..." required rows="14" cols="40" onKeyDown="textCount( document.newpost.text, document.newpost.left, 512)" onKeyUp="textCount( document.newpost.text, document.newpost.left, 512)"></textarea>
 				<div>
 				<hr>
 			</form>
 
-			<div id="chars"> Characters left: <input name="left" type="text" size="3" maxlength="3" value="160" readonly=""></div>
+			<div id="chars"> Characters left: <input name="left" type="text" size="3" maxlength="3" value="512" readonly=""></div>
 		</article>
 	</body>
 </html>

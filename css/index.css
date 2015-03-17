@@ -22,21 +22,19 @@ body {
 }
 #leftcolumn {
     left: 0px;
-    width: 70%;
+    bottom: 0px;
+    width: 65%;
+    margin-left: 5%;
+    margin-right: 0%;
 }
 #rightcolumn {
     right: 0px;
     width: 30%;
-    opacity: 0.1;
-    background-color: #111;
+    background-color: #f9faff;
 }
 
 #leftcolumn h1, h2 {
-  font-family: "Lato";
-;
   color: gray;
-
-  margin-left: 5%;
 }
 
 #leftcolumn h1 {
@@ -45,3 +43,47 @@ body {
 #leftcolumn h2 {
     font-size: 100%
 }
+
+dl#posts-array {
+  position: relative;
+  bottom: 0px;
+  height: 80%;
+  margin: 0;
+  overflow:hidden; 
+  overflow-y:scroll;
+}
+
+dl#posts-array post {
+  margin-bottom: 10px;
+}
+
+dl#posts-array  dt {
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 20px;
+  background: #cfd2db;
+  color: #3e3e40;
+}
+
+dl#posts-array  dd {
+  font-size: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-bottom-left-radius: 5px;
+  background: #f3f6ff;
+  color: #3e3e40;
+}
+
+::-webkit-scrollbar {  
+    width: 3px;  
+}  
+::-webkit-scrollbar-track {  
+    background-color: #f3f6ff;  
+}  
+::-webkit-scrollbar-thumb {  
+    background-color: #cfd2db;  
+}  
+::-webkit-scrollbar-thumb:hover {  
+    background-color: #aaa;  
+}  
