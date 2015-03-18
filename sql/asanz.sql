@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.10.1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 17, 2015 at 11:17 PM
--- Server version: 5.6.21
--- PHP Version: 5.5.14
+-- Host: 127.0.0.1
+-- Generation Time: Mar 18, 2015 at 03:49 AM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -25,27 +25,26 @@ USE `asanz`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comm`
+-- Table structure for table `comment`
 --
 
-DROP TABLE IF EXISTS `comm`;
-CREATE TABLE IF NOT EXISTS `comm` (
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
 `id` int(11) NOT NULL,
   `u_id` int(11) NOT NULL,
   `p_id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `text` text COLLATE utf8_bin NOT NULL,
-  `ans_to` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `text` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comm_like`
+-- Table structure for table `comment_like`
 --
 
-DROP TABLE IF EXISTS `comm_like`;
-CREATE TABLE IF NOT EXISTS `comm_like` (
+DROP TABLE IF EXISTS `comment_like`;
+CREATE TABLE IF NOT EXISTS `comment_like` (
   `c_id` int(11) NOT NULL,
   `u_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -60,10 +59,10 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `u_id` int(11) NOT NULL,
 `id` int(11) NOT NULL COMMENT 'Post ID',
-  `title` varchar(64) COLLATE utf8_bin NOT NULL,
+  `title` varchar(40) COLLATE utf8_bin NOT NULL,
   `text` text COLLATE utf8_bin NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=28 ;
 
 -- --------------------------------------------------------
 
@@ -80,6 +79,20 @@ CREATE TABLE IF NOT EXISTS `post_like` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reply`
+--
+
+DROP TABLE IF EXISTS `reply`;
+CREATE TABLE IF NOT EXISTS `reply` (
+`id` int(11) NOT NULL,
+  `comment_id` int(11) NOT NULL,
+  `text` varchar(128) CHARACTER SET latin1 NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -89,22 +102,22 @@ CREATE TABLE IF NOT EXISTS `user` (
   `uname` varchar(20) COLLATE utf8_bin NOT NULL,
   `pass` varchar(255) COLLATE utf8_bin NOT NULL,
   `since` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=69 ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `comm`
+-- Indexes for table `comment`
 --
-ALTER TABLE `comm`
+ALTER TABLE `comment`
  ADD PRIMARY KEY (`id`), ADD KEY `u_id` (`u_id`,`p_id`), ADD KEY `p_id` (`p_id`);
 
 --
--- Indexes for table `comm_like`
+-- Indexes for table `comment_like`
 --
-ALTER TABLE `comm_like`
+ALTER TABLE `comment_like`
  ADD PRIMARY KEY (`c_id`,`u_id`), ADD KEY `u_id` (`u_id`);
 
 --
@@ -120,6 +133,12 @@ ALTER TABLE `post_like`
  ADD PRIMARY KEY (`p_id`,`u_id`), ADD KEY `u_id` (`u_id`);
 
 --
+-- Indexes for table `reply`
+--
+ALTER TABLE `reply`
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`,`comment_id`), ADD KEY `comment_id` (`comment_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -130,15 +149,20 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `comm`
+-- AUTO_INCREMENT for table `comment`
 --
-ALTER TABLE `comm`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Post ID',AUTO_INCREMENT=44;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Post ID',AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `reply`
+--
+ALTER TABLE `reply`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -149,18 +173,18 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
 --
 
 --
--- Constraints for table `comm`
+-- Constraints for table `comment`
 --
-ALTER TABLE `comm`
-ADD CONSTRAINT `comm_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `comm_ibfk_2` FOREIGN KEY (`p_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comment`
+ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`p_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `comm_like`
+-- Constraints for table `comment_like`
 --
-ALTER TABLE `comm_like`
-ADD CONSTRAINT `comm_like_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `comm` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `comm_like_ibfk_2` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comment_like`
+ADD CONSTRAINT `comment_like_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `comment_like_ibfk_2` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `post_like`
@@ -168,6 +192,12 @@ ADD CONSTRAINT `comm_like_ibfk_2` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) 
 ALTER TABLE `post_like`
 ADD CONSTRAINT `post_like_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `post_like_ibfk_2` FOREIGN KEY (`p_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `reply`
+--
+ALTER TABLE `reply`
+ADD CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

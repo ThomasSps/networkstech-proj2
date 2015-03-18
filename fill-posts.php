@@ -27,7 +27,7 @@
 			$usr_name = $alt_row['uname'];
 			echo "<post>";
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?&nbsp;&nbsp;" . $usr_name . "&nbsp;&nbsp;@&nbsp;&nbsp;" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
-			echo "<dd>" . $row['text'] . "</dd>";
+			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
 		}
 	}

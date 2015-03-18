@@ -3,27 +3,35 @@ function add_comment_listener(e) {
 
     // If the user has pressed enter
     if ((window.event ? event.keyCode : e.which) == 13 && !e.shiftKey) {
-        //document.getElementById("newcomment").submit();
-        
 
-		//$(document).ready(function() {
-			//$("#submit").click(function() {
-				var text = $("#comment").val();
+		var text = $("#comment").val();
 
-				// Returns successful data submission message when the entered information is stored in database.
-				$.post("commit-comment.php", {
+		// Returns successful data submission message when the entered information is stored in database.
+		$.post("commit-comment.php", {
 				
-				comment: text
+		comment: text
 
-				}, function(data) {
-						$('#newcomment')[0].reset();
-						$('#comment').blur(); // To reset form fields
-					});
-			//});
-		//});
-        
+		}, function(data) {
+				$('#newcomment')[0].reset();
+				$('#comment').blur(); // To reset form fields
+			});
     }
     else {
         return true;
     }
+}
+
+function displaySelected (id){
+
+
+	$.post("fill-comm.php", {
+			
+		postid: id
+
+		}, function(data) {
+				alert(data);
+				//TODO: Refresh Right column with comments
+			});
+
+
 }

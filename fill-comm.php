@@ -5,11 +5,14 @@
 	$database = new DB_Provider();
 	$database -> connect();
 
+	session_start();
 
-	$id = $_GET["postid"];
+	$id = $_POST["postid"];
 
 	$query = "SELECT * FROM `comment` WHERE `p_id` = '" . $id . "'";
 	$result = mysql_query( $query );
+
+	$_SESSION['clicked'] = $id;
 
 	if( !$result )
 	{
@@ -19,32 +22,25 @@
 	}
 	else if( mysql_num_rows($result) == 0 )
 	{
-		echo "<h2>No comments found to show. Be the first to comment :)</h2>";
+		if (isset($_SESSION['clicked']) )
+			echo "<h2>No comments found to show. Be the first to comment :)</h2>";
+		else
+			echo "<h2>Click on a post to display comments.</h2>";
 	}
 	else
 	{
-		while( $row = mysql_fetch_array($result) )
+		$alt_query = 'SELECT `id`, `u_id`, `p_id`, `date`, `text` FROM `comment` WHERE 	`p_id` = ' . $id ;
+		$alt_result = mysql_query( $alt_query );
+
+		while( $row = mysql_fetch_assoc( $alt_result ))
 		{
-			$alt_query = 'SELECT `uname` FROM `user` WHERE `id`="' . $row['u_id'] . '"';
-			$alt_result = mysql_query( $alt_query );
-			$alt_row = mysql_fetch_assoc( $alt_result );
-			$usr_name = $alt_row['uname'];
-
-			// TO DO: Show comments!!
-
-
-
-
+			//TODO: Create JSON String with comments
+			echo $row['text'] . " ";
 
 		}
-
-
-
-
 	}
 
 	$database -> close( );
-
 
 
 ?>
