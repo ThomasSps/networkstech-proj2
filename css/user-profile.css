@@ -7,6 +7,139 @@
 
 body {
   background: #FFFFFF ;
-  font-family: "Lato" ;
+	font-family: "Lato" ;
   margin: 0;
 }    
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+#leftcolumn,  #midcolumn, #rightcolumn{
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    color: black;
+}
+#leftcolumn {
+    left: 0px;
+    bottom: 0px;
+    width: 15%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: #f3f6ff;
+}
+#midcolumn {
+    bottom: 0px;
+    width: 55%;
+    border-left: dotted #cfd2db;
+    margin-left: 15%;
+    margin-right: 30%;
+}
+#rightcolumn {
+    right: 0px;
+    width: 30%;
+    border-left: dotted #cfd2db;
+    background-color: #f3f6ff;
+}
+
+#leftcolumn h1{
+  color: gray;
+}
+#leftcolumn h1 {
+    font-size: 200%
+}
+#leftcolumn h1{
+  color: gray;
+  text-align: center;
+}
+
+#midcolumn h1, h2 {
+  color: white;
+}
+#midcolumn h1, h2 {
+  color: gray;
+  text-align: center;
+}
+#midcolumn h1 {
+    font-size: 200%
+}
+#midcolumn h2 {
+    font-size: 100%
+}
+#rightcolumn h1, h2 {
+  color: gray;
+  text-align: center;
+}
+#rightcolumn h1 {
+    font-size: 200%
+}
+#rightcolumn h2 {
+    font-size: 100%
+}
+
+#create-comm textarea[type="text"] {
+  border-radius: 7px 7px 0px 0px ;
+  border: 0;
+  resize: none;
+  font-family: "Lato";
+  font-style: italic;
+  color: gray;
+  padding: 5px;
+  width: 90%;
+  height: 10%;
+  position: absolute;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  bottom: 0px;
+  background-color: rgba(256, 256, 256, 0.4);
+}
+
+dl#posts-array {
+  position: relative;
+  bottom: 0px;
+  height: 80%;
+  margin: 0;
+  overflow:hidden; 
+  overflow-y:auto;
+}
+
+dl#posts-array post {
+ /* margin-bottom: 10px; */
+}
+
+dl#posts-array  dt {
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 20px;
+  background: #cfd2db;
+  color: #3e3e40;
+}
+
+dl#posts-array  dd {
+  font-size: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  border-bottom-left-radius: 5px;
+  background: #f3f6ff;
+  color: #3e3e40;
+}
+
+dl#posts-array dd:hover {
+
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {  
+    width: 3px;  
+}  
+::-webkit-scrollbar-track {  
+    background-color: #f3f6ff;  
+}  
+::-webkit-scrollbar-thumb {  
+    background-color: #cfd2db;  
+}  
+::-webkit-scrollbar-thumb:hover {  
+    background-color: #aaa;  
+}  
