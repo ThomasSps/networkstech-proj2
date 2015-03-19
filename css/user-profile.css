@@ -16,13 +16,16 @@ body {
 }
 .placeholder {
     background: #cccccc;
+    margin-left: 15%;
+    margin-right: 15%;
     text-align: center;
-    position: relative;
+    position: absolute;
     font-weight: bold
 }
 .placeholder span {
     position: absolute;
     left: 0;
+    text-align: center;
     bottom: 40px;
     width: 100%
 }
@@ -110,7 +113,7 @@ dl#my-posts-array {
   position: relative;
   bottom: 0px;
   height: 80%;
-  margin: 0;
+  margin: 5px;
   overflow:hidden; 
   overflow-y:auto;
 }

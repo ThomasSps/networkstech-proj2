@@ -30,9 +30,9 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Statistics</h1>
-                    <div class="placeholder" style="width: 125px; height: 125px">
+                    <div class="placeholder" style="width: 140px; height: 140px">
                         <span>Photo Will Go Here</span>
-                    </div>
+                    </div>    
 		    </div>
             <div id="midcolumn">
 		    	<h1>My Recent blog posts</h1>
