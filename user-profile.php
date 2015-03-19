@@ -30,10 +30,13 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Statistics</h1>
+                    <div class="placeholder" style="width: 125px; height: 125px">
+                        <span>Photo Will Go Here</span>
+                    </div>
 		    </div>
             <div id="midcolumn">
 		    	<h1>My Recent blog posts</h1>
-		    	<dl id="posts-array"> <?php include 'fill-posts.php'; ?> </dl>
+		    	<dl id="my-posts-array"> <?php include 'fill-user-posts.php'; ?> </dl>
 		    </div>
 		    <div id="rightcolumn">
 		    	<h1> Comments </h1>

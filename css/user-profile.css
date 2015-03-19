@@ -14,6 +14,18 @@ body {
     width: 100%;
     margin: 0 auto;
 }
+.placeholder {
+    background: #cccccc;
+    text-align: center;
+    position: relative;
+    font-weight: bold
+}
+.placeholder span {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 100%
+}
 #leftcolumn,  #midcolumn, #rightcolumn{
     position: absolute;
     top: 40px;
@@ -94,7 +106,7 @@ body {
   background-color: rgba(256, 256, 256, 0.4);
 }
 
-dl#posts-array {
+dl#my-posts-array {
   position: relative;
   bottom: 0px;
   height: 80%;
@@ -103,11 +115,7 @@ dl#posts-array {
   overflow-y:auto;
 }
 
-dl#posts-array post {
- /* margin-bottom: 10px; */
-}
-
-dl#posts-array  dt {
+dl#my-posts-array  dt {
   padding: 10px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -116,7 +124,7 @@ dl#posts-array  dt {
   color: #3e3e40;
 }
 
-dl#posts-array  dd {
+dl#my-posts-array  dd {
   font-size: 15px;
   padding: 15px;
   margin-bottom: 15px;
@@ -126,7 +134,7 @@ dl#posts-array  dd {
   color: #3e3e40;
 }
 
-dl#posts-array dd:hover {
+dl#my-posts-array dd:hover {
 
   cursor: pointer;
 }
