@@ -17,29 +17,23 @@ body {
 }
 
 #prof_pic {
-    background: #cccccc;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: center;
-    font-weight: bold;
+  background: #cccccc;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  font-weight: bold;
 }
 
 #tables {
   height: auto;
-  bottom: 0px;
-}
-
-#user,
-#user_stats,
-#posts_stats {
-  margin: 10%;
+  margin: 5%;
 }
 
 #user_tb,
 #user_stats_tb,
 #posts_stats_tb {
-  width: 100%;
   font-size: 100%;
+  width: 100%;
 }
 
 #user #user_tb th,
@@ -54,7 +48,7 @@ body {
 #user_stats_tb td,
 #posts_stats_tb td {
   text-align: left;
-  padding: 5px;
+  padding: 10px;
 }
 
 #leftcolumn, #midcolumn, #rightcolumn {
@@ -226,11 +220,12 @@ dl#comm-array  dd {
   color:black; 
   font-size:auto;
   cursor: pointer;
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
+  animation: fadein 1s;
+   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+         -ms-animation: fadein 1s; /* Internet Explorer */
+          -o-animation: fadein 1s; /* Opera < 12.1 */
+-            animation: fadein 1s;
 }
 
 #plus_one {
@@ -242,12 +237,13 @@ dl#comm-array  dd {
   color: black; 
   cursor: pointer;
   display: none;
-  font-size: auto; 
+  font-size: auto;
   animation: fadein 1s;
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
+   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+         -ms-animation: fadein 1s; /* Internet Explorer */
+          -o-animation: fadein 1s; /* Opera < 12.1 */
+-            animation: fadein 1s; 
 }
 
 #like:hover #like_counter {
@@ -256,8 +252,8 @@ dl#comm-array  dd {
 
 #like:hover #plus_one {
   display: block;
-}
 
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

@@ -152,30 +152,33 @@ dl#comm-array  dd {
   text-decoration: none;
   position:absolute;    
   color:black; 
-  font-size:auto;
+  display:inline-block
+  font-size:15px;
   cursor: pointer;
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
+  animation: fadein 1s;
+   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+         -ms-animation: fadein 1s; /* Internet Explorer */
+          -o-animation: fadein 1s; /* Opera < 12.1 */
+-            animation: fadein 1s;
 }
 
 #plus_one {
-  z-index:0;
+  z-index:100;
   margin: 11px;
-  text-decoration: none;
   font-family: "Lato";
-  position: absolute;    
-  color: black; 
+  text-decoration: none;
+  position:absolute;    
+  color:black; 
+  font-size:15px;
   cursor: pointer;
   display: none;
-  font-size: auto; 
   animation: fadein 1s;
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
+   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+         -ms-animation: fadein 1s; /* Internet Explorer */
+          -o-animation: fadein 1s; /* Opera < 12.1 */
+-            animation: fadein 1s;
 }
 
 #like:hover #like_counter {

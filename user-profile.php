@@ -12,6 +12,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/autoUpdate.js"></script>
 	  <script type="text/javascript" src="js/add_comment.js"></script>
+    <script type="text/javascript" src="js/add_like.js"></script>
 </head>
 <html>
 	<body>
@@ -32,10 +33,10 @@
           <div id="prof_pic">
               <img style="width: 100%; height: 100%; border:1px solid black;" src="img/no-profile.gif">
           </div>
+          <?php include ('fill-user-details.php'); ?>
           <div id="tables">
-              <?php include ('fill-user-details.php'); ?>
             <div id="user">
-              <table id="user_tb" style="width:100%">
+              <table id="user_tb">
                 <tr>
                   <th colspan="2">User</th>
                 </tr>
@@ -50,7 +51,7 @@
               </table>
             </div>
             <div id="user_stats">
-              <table id="user_stats_tb" style="width:100%">
+              <table id="user_stats_tb">
                 <tr>
                   <th colspan="2">User statistics</th>
                 </tr>

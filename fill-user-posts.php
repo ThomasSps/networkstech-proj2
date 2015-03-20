@@ -1,5 +1,7 @@
 <?php
 	require_once 'db_connect.php';
+	require_once 'find-likes.php';
+
 
 	$database = new DB_Provider();
 	$database -> connect();
@@ -36,8 +38,8 @@
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?" . $usr_name . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
 			echo '<div id="like">';
 			echo '<img id="ribon" src="img/ribon.png" width="30px" height="45px"/>';
-			echo '<p id="like_counter"></p>';
-			echo '<p id="plus_one">+1</p>';
+			echo '<p id="like_counter">' . getPostLikes($row['id']) . '</p>';
+			echo '<p id="plus_one" onclick="addLike(' . $row['id'] . ')">+1</p>';
 			echo '</div>';
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
