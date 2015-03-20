@@ -138,6 +138,10 @@ dl#comm-array  dd {
   color: #3e3e40;
 }
 
+#like {
+
+}
+
 #ribon {
   position: absolute;
   margin-left: 5px;
@@ -164,14 +168,16 @@ dl#comm-array  dd {
   position: absolute;    
   color: black; 
   cursor: pointer;
+  display: none;
   font-size: auto; 
 }
-
-#ribon:hover + #like_counter{
+#like:hover #like_counter {
   display: none;
 }
 
-#ribon:hover  #plus_one{
+#like:hover #plus_one {
+  transition: 1s;
+  left: 0;
   display: block;
 }
 
