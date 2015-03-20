@@ -94,6 +94,11 @@
 		    <div id="rightcolumn">
 		    	  <h1>Comments</h1>
 		    	  <dl id="comm-array"> <?php include 'fill-comm.php'; ?> </dl>
+            <div id="create-comm">
+            <form id="newcomment" name="newcomment" method="POST">
+              <textarea id="comment" name="comment" type="text"  placeholder="Write a comment..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Write a comment...'" onkeydown="add_comment_listener(event);" autocomplete = off  ></textarea>
+            </form>
+          </div>
 		    </div>
 		</div>
 	</article>

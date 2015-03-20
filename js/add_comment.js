@@ -1,3 +1,5 @@
+var vid;
+
 function add_comment_listener(e) {
     
 
@@ -14,6 +16,7 @@ function add_comment_listener(e) {
 		}, function(data) {
 				$('#newcomment')[0].reset();
 				$('#comment').blur(); // To reset form fields
+				displaySelected( window.vid );
 			});
     }
     else {
@@ -22,15 +25,16 @@ function add_comment_listener(e) {
 }
 
 function displaySelected (id){
-
+	window.vid = id;
 
 	$.post("fill-comm.php", {
 			
 		postid: id
 
 		}, function(data) {
-				alert(data);
+				document.getElementById("comm-array").innerHTML = data;
 				//TODO: Refresh Right column with comments
+				document.getElementById("comm-array").scrollTo(0,document.getElementById("comm-array").scrollHeight);
 			});
 
 
