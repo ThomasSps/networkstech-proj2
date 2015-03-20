@@ -57,15 +57,15 @@
                 <tr>
                   <tr>
                     <td>Posts</td>
-                    <td style="text-align:right;"><?php getnumPosts(); ?></td>
+                    <td style="text-align:right;"><?php getnumUPosts(); ?></td>
                   </tr>
                   <tr>
                     <td>Comments</td>
-                    <td style="text-align:right;">_____</td>
+                    <td style="text-align:right;"><?php getnumUComms(); ?></td>
                   </tr>
                 <tr>
                   <td>Likes</td>
-                  <td style="text-align:right;">_____</td>
+                  <td style="text-align:right;"><?php getnumULikes(); ?></td>
                 </tr>
               </table>
             </div>
@@ -77,11 +77,11 @@
                 <tr>
                   <tr>
                     <td>Comments</td>
-                    <td style="text-align:right;">_____</td>
+                    <td style="text-align:right;"><?php getnumPComms(); ?></td>
                   </tr>
                 <tr>
                   <td>Likes</td>
-                  <td style="text-align:right;">_____</td>
+                  <td style="text-align:right;"><?php getnumPLikes(); ?></td>
                 </tr>
               </table>
             </div>
