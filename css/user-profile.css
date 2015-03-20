@@ -26,7 +26,6 @@ body {
 
 #tables {
   height: auto;
-  padding-bottom: 30px;
   bottom: 0px;
 }
 
@@ -48,7 +47,6 @@ body {
 #posts_stats_tb th {
   text-align: center;
   background: #cfd2db;
-  radius: 2px;
   padding: 10px;
 }
 
@@ -62,12 +60,13 @@ body {
 #leftcolumn, #midcolumn, #rightcolumn {
     position: absolute;
     top: 40px;
-    bottom: -1px;
+    bottom: 0px;
     color: black;
 }
 
 #leftcolumn {
     left: 0px;
+    bottom: 0px;
     width: 15%;
     margin-left: 0%;
     margin-right: 0%;
