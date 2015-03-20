@@ -145,7 +145,7 @@ dl#comm-array  dd {
   cursor: pointer;
 }
 
-#like_counter {
+.like_counter {
   z-index:100;
   margin: 11px;
   font-family: "Lato";
@@ -155,12 +155,6 @@ dl#comm-array  dd {
   display:inline-block
   font-size:15px;
   cursor: pointer;
-  animation: fadein 1s;
-   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fadein 1s; /* Firefox < 16 */
-         -ms-animation: fadein 1s; /* Internet Explorer */
-          -o-animation: fadein 1s; /* Opera < 12.1 */
--            animation: fadein 1s;
 }
 
 #plus_one {
@@ -181,7 +175,7 @@ dl#comm-array  dd {
 -            animation: fadein 1s;
 }
 
-#like:hover #like_counter {
+#like:hover .like_counter {
   display: none;
 }
 

@@ -4,6 +4,6 @@ function addLike (id){
 		liketo: id
 
 		}, function(data) {
-				alert(data);
+				document.getElementById(id).innerHTML = data;
 			});
 }
