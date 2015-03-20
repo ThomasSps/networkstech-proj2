@@ -4,8 +4,8 @@
 	$database = new DB_Provider();
 	$database -> connect();
     
-    $uname = $_SESSION["uname"];
-    
+    global $uname;
+
     $query = 'SELECT `id` FROM `user` WHERE `uname` = "' . $uname . '"';
     $u_res = mysql_query( $query );
     $u_row = mysql_fetch_assoc( $u_res );
@@ -33,7 +33,7 @@
 			$alt_row = mysql_fetch_assoc( $alt_result );
 			$usr_name = $alt_row['uname'];
 			echo "<post>";
-			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?&nbsp;&nbsp;" . $usr_name . "&nbsp;&nbsp;@&nbsp;&nbsp;" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?" . $usr_name . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
 		}

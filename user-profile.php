@@ -33,6 +33,7 @@
               <img style="width: 100%; height: 100%; border:1px solid black;" src="img/no-profile.gif">
           </div>
           <div id="tables">
+              <?php include ('fill-user-details.php'); ?>
             <div id="user">
               <table id="user_tb" style="width:100%">
                 <tr>
@@ -40,11 +41,11 @@
                 </tr>
                 <tr>
                   <td>Username</td>
-                  <td style="text-align:right; font-style: italic;"><?php session_start();  echo $_SESSION['uname']; ?></td>
+                  <td style="text-align:right; font-style: italic;"><?php getUname(); ?></td>
                 </tr>
                 <tr>
-                  <td>Member since</td>
-                  <td style="text-align:right; font-style: italic;">_____</td>
+                  <td>Since</td>
+                  <td style="text-align:right; font-style: italic;"><?php getSince(); ?></td>
                 </tr>
               </table>
             </div>
@@ -56,7 +57,7 @@
                 <tr>
                   <tr>
                     <td>Posts</td>
-                    <td style="text-align:right;">_____</td>
+                    <td style="text-align:right;"><?php getnumPosts(); ?></td>
                   </tr>
                   <tr>
                     <td>Comments</td>
