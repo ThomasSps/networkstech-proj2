@@ -26,15 +26,16 @@
 		exit;
 	}
 
-	$text = $_POST['comment'];
+	$text = $_POST['reply'];
+	$ans_to = $_POST['comment_id'];
 
 
 
-
-	$query = 'INSERT INTO `comment`(`u_id`, `p_id`, `text`) VALUES ('. $uid . ','. $_SESSION['clicked']. ',"' . $text . '")';
+	$query = 'INSERT INTO `reply`(`u_id`, `comment_id`, `text`) VALUES ('. $uid . ','. $ans_to . ',"' . $text . '")';
 	$result = mysql_query( $query );
 
 	$database -> close();
+
 
 
 
