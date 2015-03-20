@@ -80,7 +80,10 @@ body {
 	padding-top: 14px;
 	padding-bottom: 14px;
 	outline: none;
-	font-size: 13px;	
+	font-size: 13px;
 	border-bottom: 3px solid #585858;
 	cursor: pointer;
+}
+.wrap button:hover {
+  background: #eeeeee;
 }

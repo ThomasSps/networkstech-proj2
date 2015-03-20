@@ -26,10 +26,8 @@
 	$_SESSION['uname'] = $user;
 	$_SESSION['pass'] = $pass;
 	$_SESSION['Error'] = 0;
+
 	
-
-
-
 	// AUTHENTICATE USER
 
 	$query = "SELECT * FROM `user` WHERE `uname` = '$user'";
@@ -53,7 +51,7 @@
 		}
 		else {
 
-			// INVALID PASSWORD -> LOGIN 
+			// INVALID PASSWORD -> LOGIN
 			unset($_SESSION['uname']);
 			unset($_SESSION['pass']);
 
@@ -68,7 +66,7 @@
 		}
 	}
 	else if ($count == 0 && $sessiontry == 1) {
-		//NO SESSION FOUND -> LOGIN  
+		//NO SESSION FOUND -> LOGIN
 		unset($_SESSION['uname']);
 		unset($_SESSION['pass']);
 
