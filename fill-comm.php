@@ -37,9 +37,11 @@
 			$myquery = 'SELECT `uname` FROM `user` WHERE `id` = ' . $row['u_id'];
 			$myresult = mysql_query($myquery);
 			$name = mysql_fetch_assoc($myresult);
-			//TODO: Create JSON String with comments
+			$myid = $row['id'];
+			
+			
 			echo "<comment>";
-			echo "<dt>" . "?" . $name['uname'] . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo "<dt>" . "?" . $name['uname'] . "&nbsp;&nbsp;@" . substr($row['date'], 0, strlen($row['date'])-3). "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
 			echo '<dd >' . $row['text'] . '</dd>';
 			echo "</comment>";
 

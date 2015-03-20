@@ -8,6 +8,11 @@ function add_comment_listener(e) {
 
 		var text = $("#comment").val();
 
+		if (text.length < 1){
+			
+			text = "I am a douchebag and I posted an empty comment";
+		}
+
 		// Returns successful data submission message when the entered information is stored in database.
 		$.post("commit-comment.php", {
 				
@@ -23,6 +28,28 @@ function add_comment_listener(e) {
         return true;
     }
 }
+
+//TODO: Visualize replies!!!!!!!!!!!
+function add_reply (id){
+	
+	var myid = id;
+	
+	$.post("commit-reply.php", {
+		
+		//TO DO: Replies text box
+		comment_id: myid
+		//reply: text
+		
+	}, function(data) {
+		
+		$('#newcomment')[0].reset();
+		$('#comment').blur(); // To reset form fields
+		
+		displaySelected( window.vid );
+
+	});
+}
+
 
 function displaySelected (id){
 	window.vid = id;
