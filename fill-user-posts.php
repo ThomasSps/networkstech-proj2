@@ -4,8 +4,8 @@
 	$database = new DB_Provider();
 	$database -> connect();
     
-    $uname = $_SESSION["uname"];
-    
+    global $uname;
+
     $query = 'SELECT `id` FROM `user` WHERE `uname` = "' . $uname . '"';
     $u_res = mysql_query( $query );
     $u_row = mysql_fetch_assoc( $u_res );
