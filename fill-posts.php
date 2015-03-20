@@ -18,15 +18,15 @@
 		echo "<h2>No posts found to show, come back later</h2>";
 	}
 	else
-	{ 
+	{
 		while( $row = mysql_fetch_array($result) )
-		{			
+		{
 			$alt_query = 'SELECT `uname` FROM `user` WHERE `id`="' . $row['u_id'] . '"';
 			$alt_result = mysql_query( $alt_query );
 			$alt_row = mysql_fetch_assoc( $alt_result );
 			$usr_name = $alt_row['uname'];
 			echo "<post>";
-			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?&nbsp;&nbsp;" . $usr_name . "&nbsp;&nbsp;@&nbsp;&nbsp;" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?" . $usr_name . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
 		}

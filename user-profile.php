@@ -29,46 +29,61 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Statistics</h1>
-          <div id="prof_pic" style="width: 200px; height: 250px">
+          <div id="prof_pic">
               <img style="width: 100%; height: 100%; border:1px solid black;" src="img/no-profile.gif">
           </div>
-          <div id="user">
-            <table id="user_tb" style="width:100%">
-              <tr>
-                <th colspan="2">User</th>
-              </tr>
-              <tr>
-                <td>Username</td>
-                <td style="text-align:right; font-style: italic;"><?php session_start();  echo $_SESSION['uname']; ?></td>
-              </tr>
-              <tr>
-                <td>Member since</td>
-                <td style="text-align:right; font-style: italic;">_____</td>
-              </tr>
-            </table>
-          </div>
-          <div id="user_stats">
-            <table id="user_stats_tb" style="width:100%">
-              <tr>
-                <th colspan="2">User statistics</th>
-              </tr>
-              <tr>
+          <div id="tables">
+            <div id="user">
+              <table id="user_tb" style="width:100%">
                 <tr>
-                  <td>User posts</td>
-                  <td style="text-align:right;">_____</td>
+                  <th colspan="2">User</th>
                 </tr>
                 <tr>
-                  <td>User comments</td>
+                  <td>Username</td>
+                  <td style="text-align:right; font-style: italic;"><?php session_start();  echo $_SESSION['uname']; ?></td>
+                </tr>
+                <tr>
+                  <td>Member since</td>
+                  <td style="text-align:right; font-style: italic;">_____</td>
+                </tr>
+              </table>
+            </div>
+            <div id="user_stats">
+              <table id="user_stats_tb" style="width:100%">
+                <tr>
+                  <th colspan="2">User statistics</th>
+                </tr>
+                <tr>
+                  <tr>
+                    <td>Posts</td>
+                    <td style="text-align:right;">_____</td>
+                  </tr>
+                  <tr>
+                    <td>Comments</td>
+                    <td style="text-align:right;">_____</td>
+                  </tr>
+                <tr>
+                  <td>Likes</td>
                   <td style="text-align:right;">_____</td>
                 </tr>
-                <td>User's posts</td>
-                <td style="text-align:right;">_____</td>
-              </tr>
-              <tr>
-                <td>User's comments</td>
-                <td style="text-align:right;">_____</td>
-              </tr>
-            </table>
+              </table>
+            </div>
+            <div id="posts_stats">
+              <table id="posts_stats_tb" style="width:100%">
+                <tr>
+                  <th colspan="2">Posts statistics</th>
+                </tr>
+                <tr>
+                  <tr>
+                    <td>Comments</td>
+                    <td style="text-align:right;">_____</td>
+                  </tr>
+                <tr>
+                  <td>Likes</td>
+                  <td style="text-align:right;">_____</td>
+                </tr>
+              </table>
+            </div>
           </div>
 		    </div>
         <div id="midcolumn">
