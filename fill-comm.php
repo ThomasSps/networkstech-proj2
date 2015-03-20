@@ -34,8 +34,14 @@
 
 		while( $row = mysql_fetch_assoc( $alt_result ))
 		{
+			$myquery = 'SELECT `uname` FROM `user` WHERE `id` = ' . $row['u_id'];
+			$myresult = mysql_query($myquery);
+			$name = mysql_fetch_assoc($myresult);
 			//TODO: Create JSON String with comments
-			echo $row['text'] . " ";
+			echo "<comment>";
+			echo "<dt>" . "?" . $name['uname'] . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo '<dd >' . $row['text'] . '</dd>';
+			echo "</comment>";
 
 		}
 	}

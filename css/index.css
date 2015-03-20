@@ -111,6 +111,33 @@ dl#posts-array dd:hover {
   cursor: pointer;
 }
 
+dl#comm-array {
+  position: relative;
+  bottom: 0px;
+  height: 70%;
+  margin: 0;
+  overflow:hidden; 
+  overflow-y:auto;
+}
+
+dl#comm-array  dt {
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 20px;
+  background: #cfd2db;
+  color: #3e3e40;
+}
+
+dl#comm-array  dd {
+  font-size: 15px;
+  padding: 15px;
+  margin-left: 0;
+  border-bottom-left-radius: 5px;
+  background: #fff;
+  color: #3e3e40;
+}
+
 ::-webkit-scrollbar {  
     width: 3px;  
 }  

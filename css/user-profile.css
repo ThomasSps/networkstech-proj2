@@ -132,6 +132,23 @@ body {
     font-size: 100%
 }
 
+#create-comm textarea[type="text"] {
+  border-radius: 7px 7px 0px 0px ;
+  border: 0;
+  resize: none;
+  font-family: "Lato";
+  font-style: italic;
+  color: gray;
+  padding: 5px;
+  width: 90%;
+  height: 10%;
+  position: absolute;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  bottom: 0px;
+  background-color: rgba(256, 256, 256, 0.4);
+}
+
 dl#my-posts-array {
   position: relative;
   bottom: 0px;
@@ -164,6 +181,33 @@ dl#my-posts-array  dd {
 dl#my-posts-array dd:hover {
 
   cursor: pointer;
+}
+
+dl#comm-array {
+  position: relative;
+  bottom: 0px;
+  height: 70%;
+  margin: 0;
+  overflow:hidden; 
+  overflow-y:auto;
+}
+
+dl#comm-array  dt {
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 20px;
+  background: #cfd2db;
+  color: #3e3e40;
+}
+
+dl#comm-array  dd {
+  font-size: 15px;
+  padding: 15px;
+  margin-left: 0;
+  border-bottom-left-radius: 5px;
+  background: #fff;
+  color: #3e3e40;
 }
 
 ::-webkit-scrollbar {
