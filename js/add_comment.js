@@ -34,6 +34,7 @@ function displaySelected (id){
 		}, function(data) {
 				document.getElementById("comm-array").innerHTML = data;
 				//TODO: Refresh Right column with comments
+				document.getElementById("comm-array").scrollTo(0,document.getElementById("comm-array").scrollHeight);
 			});
 
 
