@@ -34,6 +34,8 @@
 			$usr_name = $alt_row['uname'];
 			echo "<post>";
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?" . $usr_name . "&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo '<img id="ribon" src="img/ribon.png" width="30px" height="45px"/>';
+			echo '<p id="like_counter">5k</p>';
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
 		}

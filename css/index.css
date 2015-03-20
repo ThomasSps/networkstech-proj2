@@ -90,8 +90,8 @@ dl#posts-array post {
 dl#posts-array  dt {
   padding: 10px;
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
   font-size: 20px;
+  word-break: break-all;
   background: #cfd2db;
   color: #3e3e40;
 }
@@ -102,12 +102,12 @@ dl#posts-array  dd {
   margin-bottom: 15px;
   margin-right: 20px;
   border-bottom-left-radius: 5px;
+  word-break: break-all;
   background: #f3f6ff;
   color: #3e3e40;
 }
 
 dl#posts-array dd:hover {
-
   cursor: pointer;
 }
 
@@ -122,20 +122,57 @@ dl#comm-array {
 
 dl#comm-array  dt {
   padding: 10px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  font-size: 20px;
+  margin-left: 2px;
+  font-size: 16px;
+  word-break: break-all;
   background: #cfd2db;
   color: #3e3e40;
 }
 
 dl#comm-array  dd {
-  font-size: 15px;
+  font-size: 12px;
   padding: 15px;
   margin-left: 0;
-  border-bottom-left-radius: 5px;
   background: #fff;
+  word-break: break-all;
   color: #3e3e40;
+}
+
+#ribon {
+  position: absolute;
+  margin-left: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+#like_counter {
+  z-index:100;
+  margin: 11px;
+  font-family: "Lato";
+  text-decoration: none;
+  position:absolute;    
+  color:black; 
+  font-size:auto;
+  cursor: pointer;
+}
+
+#plus_one {
+  z-index:0;
+  margin: 11px;
+  text-decoration: none;
+  font-family: "Lato";
+  position: absolute;    
+  color: black; 
+  cursor: pointer;
+  font-size: auto; 
+}
+
+#ribon:hover + #like_counter{
+  display: none;
+}
+
+#ribon:hover  #plus_one{
+  display: block;
 }
 
 ::-webkit-scrollbar {  

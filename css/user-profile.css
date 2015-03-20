@@ -68,6 +68,7 @@ body {
     left: 0px;
     bottom: 0px;
     width: 15%;
+    overflow-y: auto;
     margin-left: 0%;
     margin-right: 0%;
     background-color: #f3f6ff;
@@ -161,9 +162,9 @@ dl#my-posts-array {
 dl#my-posts-array  dt {
   padding: 10px;
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
   font-size: 20px;
   background: #cfd2db;
+  word-break: break-all;
   color: #3e3e40;
 }
 
@@ -172,6 +173,7 @@ dl#my-posts-array  dd {
   padding: 15px;
   margin-bottom: 15px;
   margin-right: 20px;
+  word-break: break-all;
   border-bottom-left-radius: 5px;
   background: #f3f6ff;
   color: #3e3e40;
@@ -193,20 +195,35 @@ dl#comm-array {
 
 dl#comm-array  dt {
   padding: 10px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  font-size: 20px;
+  margin-left: 2px;
+  font-size: 16px;
+  word-break: break-all;
   background: #cfd2db;
   color: #3e3e40;
 }
 
 dl#comm-array  dd {
-  font-size: 15px;
+  font-size: 12px;
   padding: 15px;
+  word-break: break-all;
   margin-left: 0;
   border-bottom-left-radius: 5px;
   background: #fff;
   color: #3e3e40;
+}
+
+#ribon {
+  position: absolute;
+  margin-left: 5px;
+  float: left;
+}
+#like_counter {
+  z-index:100;
+  margin: 11px;
+  font-family: "Lato";
+  position:absolute;    
+  color:black; 
+  font-size:auto;
 }
 
 ::-webkit-scrollbar {
