@@ -3,17 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	<meta charset="UTF-8">
-	<title>Asanz - Dashboard</title>
+ 	  <meta charset="UTF-8">
+	  <title>Asanz - Profile</title>
 
-	<link rel="stylesheet" href="css/navbar.css">
+	  <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/user-profile.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/autoUpdate.js"></script>
-	<script type="text/javascript" src="js/add_comment.js"></script>
-    
-    </head>
+	  <script type="text/javascript" src="js/add_comment.js"></script>
+</head>
 <html>
 	<body>
 	<header id="user-page">
@@ -30,22 +29,55 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Statistics</h1>
-                    <div class="placeholder" style="width: 140px; height: 140px">
-                        <span>Photo Will Go Here</span>
-                    </div>    
+          <div id="prof_pic" style="width: 200px; height: 250px">
+              <img style="width: 100%; height: 100%; border:1px solid black;" src="img/no-profile.gif">
+          </div>
+          <div id="user">
+            <table id="user_tb" style="width:100%">
+              <tr>
+                <th colspan="2">User</th>
+              </tr>
+              <tr>
+                <td>Username</td>
+                <td style="text-align:right; font-style: italic;"><?php session_start();  echo $_SESSION['uname']; ?></td>
+              </tr>
+              <tr>
+                <td>Member since</td>
+                <td style="text-align:right; font-style: italic;">_____</td>
+              </tr>
+            </table>
+          </div>
+          <div id="user_stats">
+            <table id="user_stats_tb" style="width:100%">
+              <tr>
+                <th colspan="2">User statistics</th>
+              </tr>
+              <tr>
+                <tr>
+                  <td>User posts</td>
+                  <td style="text-align:right;">_____</td>
+                </tr>
+                <tr>
+                  <td>User comments</td>
+                  <td style="text-align:right;">_____</td>
+                </tr>
+                <td>User's posts</td>
+                <td style="text-align:right;">_____</td>
+              </tr>
+              <tr>
+                <td>User's comments</td>
+                <td style="text-align:right;">_____</td>
+              </tr>
+            </table>
+          </div>
 		    </div>
-            <div id="midcolumn">
-		    	<h1>My Recent blog posts</h1>
-		    	<dl id="my-posts-array"> <?php include 'fill-user-posts.php'; ?> </dl>
+        <div id="midcolumn">
+    		    <h1>My recent blog posts</h1>
+    		    <dl id="my-posts-array"> <?php include 'fill-user-posts.php'; ?> </dl>
 		    </div>
 		    <div id="rightcolumn">
-		    	<h1> Comments </h1>
-		    	<dl id="comm-array"> <?php include 'fill-comm.php'; ?> </dl>
-		  		<div id="create-comm">
-		  			<form id="newcomment" name="newcomment" method="POST">
-		  				<textarea id="comment" name="comment" type="text"  placeholder="Write a comment..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Write a comment...'" onkeydown="add_comment_listener(event);" autocomplete = off  ></textarea>
-		  			</form>
-		  		</div>
+		    	  <h1>Comments</h1>
+		    	  <dl id="comm-array"> <?php include 'fill-comm.php'; ?> </dl>
 		    </div>
 		</div>
 	</article>
