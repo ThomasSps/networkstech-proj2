@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/navbar.css">
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
-	<!--<script type="text/javascript" src="js/autoUpdate.js"></script> -->
+	<script type="text/javascript" src="js/autoUpdate.js"></script>
 	<script type="text/javascript" src="js/add_comment.js"></script>
 </head>
 <html>
@@ -37,7 +37,7 @@
 		<div id="wrapper">
 		    <div id="leftcolumn">
 		    	<h1>Recent blog posts</h1>
-		    	<dl id="posts-array"><?php include 'fill-posts.php'; ?> </dl>
+		    	<dl id="posts-array"> <?php include 'fill-posts.php'; ?> </dl>
 		    </div>
 		    <div id="rightcolumn">
 		    	<h1> Comments </h1>
