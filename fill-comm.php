@@ -41,7 +41,7 @@
 			
 			
 			echo "<comment>";
-			echo "<dt>" . "?" . $name['uname'] . "&nbsp;&nbsp;@" . substr($row['date'], 0, strlen($row['date'])-3). '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. " <a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
 			echo '<dd >' . $row['text'] . '</dd>';
 			echo "</comment>";
 
