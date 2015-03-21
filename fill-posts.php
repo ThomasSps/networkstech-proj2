@@ -27,7 +27,7 @@
 			$alt_row = mysql_fetch_assoc( $alt_result );
 			$usr_name = $alt_row['uname'];
 			echo "<post>";
-			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). "</dt>";
+			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'.  "</dt>";
 			echo '<div id="like">';
 			echo '<img id="ribon" src="img/ribon.png" width="30px" height="45px"/>';
 			echo '<p class="like_counter" id="'. $row['id'] . '">' . getPostLikes($row['id']) . '</p>';
