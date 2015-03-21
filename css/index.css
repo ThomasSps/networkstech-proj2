@@ -141,6 +141,14 @@ dl#comm-array  dd {
   cursor: pointer;
 }
 
+#delete {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
 .like_counter {
   z-index:100;
   position: absolute;
