@@ -12,11 +12,10 @@
 
 ##Installation notes
 
-*
-- Import to an MySQL Database the "/sql/asanz.sql" file, use phpMyAdmin.
+
+*- Import to an MySQL Database the "/sql/asanz.sql" file, use phpMyAdmin.
 - Confgigure your Database details to the "config.php" file.
-- Start developing!
-*
+- Start developing!*
 
 ----------
 
