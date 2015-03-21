@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+body {
+	background: #939393 ;
+	font-family: "Lato" ;
+}
+.wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.avatar {
+	position: fixed;
+
+	top: calc(50% - 28px);
+	left: calc(50% - 28px);
+
+	margin: 0px;
+}
+.avatar img {
+	width: 56px;
+	height: 56px;
+
+	border-radius: 100px;
+	border:3px solid #fff;
+
+	display: block;
+}
+#object {
+	position: absolute;
+
+	width: 110px;
+	height: 50px;
+
+	top: calc(48% - 75px);
+	left: calc(50% - 50px);
+
+	background: white;
+	opacity: 0.8;
+
+	border-radius: 10px;
+
+	text-align: center;
+	text-decoration: none;
+
+	visibility: hidden;
+}
+
+#object:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+

@@ -8,6 +8,12 @@
 			//Destructor
 			function __destruct() 
 			{	}
+
+			public function selectDB()
+			{
+				require_once 'config.php';
+				return 	mysql_select_db(DB_DATABASE);
+			}
 		 
 			// Connecting to database
 			public function connect() 
