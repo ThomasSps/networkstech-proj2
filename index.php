@@ -22,6 +22,7 @@
 		    <li><a href="create-post.php">+Post</a></li>
 		    <li><a id="go-home" href="index.php">Home</a></li>
 		    <li><a href="user-profile.php">Dashboard</a></li>
+
 			    
 		    <!-- A sub-list item 
 		    <li><a href="">Menu Item</a>
@@ -31,6 +32,10 @@
 		    </li> -->
 
 		    <li><a id="logout" href="logout.php">Logout</a></li>
+		    <div id="navigationright" style="float: right; cursor:default;">
+					<li><a> Active User: &nbsp; <?php include "active_user.php"; ?></a></li>
+						
+			</div>
 		  </ul>
 		</nav>
 	</header>

@@ -23,6 +23,9 @@
 		    <li><a href="index.php">Home</a></li>
 		    <li><a id="user-profile" href="user-profile.php">Dashboard</a></li>
 		    <li><a id="logout" href="logout.php">Logout</a></li>
+        <div id="navigationright" style="float: right; cursor:default;">
+          <li><a> Active User: &nbsp; <?php include "active_user.php"; ?></a></li>
+      </div>
 		  </ul>
 		</nav>
 	</header>
