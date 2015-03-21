@@ -25,14 +25,33 @@
 		exit;
 	}
 
-	$query = 'INSERT INTO `post_like`(`p_id`, `u_id`) VALUES (' . $_POST['liketo'] . ',' . $uid . ')';
-	$result = mysql_query($query);
+	$testquery = 'SELECT `p_id`, `u_id` FROM `post_like` WHERE ( `p_id`="' . $_POST['liketo'] . '" AND `u_id`="' . $uid . '")';
+	$testresult = mysql_query($testquery);
 
-	if( !$result )
-	{
-		echo "DB Error, could not query the database\n";
-	    echo 'MySQL Error: ' . mysql_error();
-		exit;
+	if (mysql_num_rows($testresult) == 1){
+
+		$delete_query = 'DELETE FROM `post_like` WHERE `p_id` ="'. $_POST['liketo'] . '" AND `u_id` ="' . $uid . '"';
+		$d_result = mysql_query($delete_query);
+
+		if( !$d_result )
+		{
+			echo "DB Error, could not query the database\n";
+		    echo 'MySQL Error: ' . mysql_error();
+			exit;
+		}
+
+	}
+	else {
+
+		$query = 'INSERT INTO `post_like`(`p_id`, `u_id`) VALUES (' . $_POST['liketo'] . ',' . $uid . ')';
+		$result = mysql_query($query);
+
+		if( !$result )
+		{
+			echo "DB Error, could not query the database\n";
+		    echo 'MySQL Error: ' . mysql_error();
+			exit;
+		}
 	}
 	
 	echo getPostLikes( $_POST['liketo'] );
