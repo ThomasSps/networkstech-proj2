@@ -83,10 +83,6 @@ dl#posts-array {
   overflow-y:auto;
 }
 
-dl#posts-array post {
- /* margin-bottom: 10px; */
-}
-
 dl#posts-array  dt {
   padding: 10px;
   border-top-left-radius: 5px;
@@ -147,14 +143,14 @@ dl#comm-array  dd {
 
 .like_counter {
   z-index:100;
-  margin: 11px;
+  position: absolute;
   font-family: "Lato";
   text-decoration: none;
-  position:absolute;    
   color:black; 
-  display:inline-block
+  display:inline-block;
   font-size:15px;
   cursor: pointer;
+  margin: 12px;
 }
 
 #plus_one {
@@ -167,12 +163,11 @@ dl#comm-array  dd {
   font-size:15px;
   cursor: pointer;
   display: none;
-  animation: fadein 1s;
    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
         -moz-animation: fadein 1s; /* Firefox < 16 */
          -ms-animation: fadein 1s; /* Internet Explorer */
           -o-animation: fadein 1s; /* Opera < 12.1 */
--            animation: fadein 1s;
+            animation: fadein 1s;
 }
 
 #like:hover .like_counter {
