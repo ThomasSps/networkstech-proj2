@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/delete_post_comm.js"></script>
 <?php
 
 	require_once 'db_connect.php';
@@ -35,6 +36,11 @@
 
 		while( $row = mysql_fetch_assoc( $alt_result ))
 		{
+            $id_query = 'SELECT id FROM `comment` WHERE `id`= "' . $row['id'] . '"';
+            $id_result = mysql_query( $id_query );
+			$id_row = mysql_fetch_assoc( $id_result );
+			$comm_id = $id_row['id'];
+            
 			$myquery = 'SELECT `uname` FROM `user` WHERE `id` = ' . $row['u_id'];
 			$myresult = mysql_query($myquery);
 			$name = mysql_fetch_assoc($myresult);
@@ -49,11 +55,11 @@
 			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
             
             if (check($name['uname'], $_SESSION['uname']) == 1){
-                echo '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
             }
             
             elseif (check($c_name, $_SESSION['uname']) == 1){
-                echo '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
             }
             
             else {

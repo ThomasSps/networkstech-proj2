@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/deletePost.js"></script>
 <?php
 	require_once 'db_connect.php';
 	require_once 'find-likes.php';
@@ -30,6 +31,11 @@
 	{ 
 		while( $row = mysql_fetch_array($result) )
 		{			
+            $id_query = 'SELECT id FROM `post` WHERE `id`= "' . $row['id'] . '"';
+            $id_result = mysql_query( $id_query );
+			$id_row = mysql_fetch_assoc( $id_result );
+			$post_id = $id_row['id'];
+            
 			$alt_query = 'SELECT `uname` FROM `user` WHERE `id`="' . $row['u_id'] . '"';
 			$alt_result = mysql_query( $alt_query );
 			$alt_row = mysql_fetch_assoc( $alt_result );
@@ -39,7 +45,7 @@
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
             
             if (check($usr_name, $_SESSION['uname']) == 1){
-                echo'</i><button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. "</dt>";
+                echo'</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>'. "</dt>";
             }
             else{
                 echo'</i></dt>';
