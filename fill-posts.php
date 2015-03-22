@@ -40,10 +40,10 @@
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
             
             if (check($usr_name, $_SESSION['uname']) == 1){
-                echo '<button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button></dt>';
+                echo '</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button></dt>';
             }
             else {
-                echo "</dt>";
+                echo "</i></dt>";
             }      
 			
             echo '<div id="like">';
