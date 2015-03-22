@@ -1,6 +1,7 @@
 <?php
 
 	require_once 'db_connect.php';
+    require_once 'delete.php';
 
 	$database = new DB_Provider();
 	$database -> connect();
@@ -39,10 +40,27 @@
 			$name = mysql_fetch_assoc($myresult);
 			$myid = $row['id'];
 			
+            $c_query = 'SELECT user.uname AS pname FROM `user` INNER JOIN `post` ON user.id = post.u_id WHERE post.id = "' . $id . '"' ; 
+            $c_result = mysql_query( $c_query );
+			$c_row = mysql_fetch_assoc( $c_result );
+			$c_name = $c_row['pname'];
 			
 			echo "<comment>";
-			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. " <a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
-			echo '<dd >' . $row['text'] . '</dd>';
+			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
+            
+            if (check($name['uname'], $_SESSION['uname']) == 1){
+                echo '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+            }
+            
+            elseif (check($c_name, $_SESSION['uname']) == 1){
+                echo '<button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+            }
+            
+            else {
+                echo "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+            }      
+			
+            echo '<dd >' . $row['text'] . '</dd>';
 			echo "</comment>";
 
 		}

@@ -1,7 +1,7 @@
 <?php
 	require_once 'db_connect.php';
 	require_once 'find-likes.php';
-
+    require_once 'delete.php';
 
 	$database = new DB_Provider();
 	$database -> connect();
@@ -36,8 +36,15 @@
 			$usr_name = $alt_row['uname'];
 			
 			echo "<post>";
-
-			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3). '</i><button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. "</dt>";
+			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
+            
+            if (check($usr_name, $_SESSION['uname']) == 1){
+                echo'</i><button type="button" id="delete" onclick=""><img src="img/delete.png" width="20px" height="20px"></button>'. "</dt>";
+            }
+            else{
+                echo'</i></dt>';
+            }
+                
 			echo '<div id="like">';
 			echo '<img id="ribon" src="img/ribon.png" width="35px" height="45px"/>';
 			if (getPostLikes($row['id']) < 10){
