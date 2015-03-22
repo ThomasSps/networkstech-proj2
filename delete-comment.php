@@ -9,7 +9,6 @@
 	$query = 'DELETE FROM comment WHERE id = '. $_POST['commid'] .'';
 	$result = mysql_query( $query );
 
-	header('Location: index.php');
 
 	$database->close();
 ?>
