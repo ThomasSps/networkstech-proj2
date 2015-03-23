@@ -19,6 +19,19 @@
 
 ----------
 
+##MUST TODO: List
+
+ - Show Selected (Highlight Post)
+ - Reply functionality
+ - Case Sensitive Username checks
+ - Rework icons
+ - Check comments for code (e.g  echo "asasa")
+
+
+----------
+
+
+
 ##Future TODO: List
 
  - Search bar on Navigation Bar (Content/Hashtags)
