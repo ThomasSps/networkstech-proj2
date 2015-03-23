@@ -4,7 +4,7 @@
 	session_start( );
 	
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 	
 	//TODO: take uname from $_GET request too :D
 	$uname = mysql_real_escape_string( $_SESSION['uname'] );
@@ -29,8 +29,7 @@
 	$ans_to = $_POST['comment_id'];
 	
 	$query = 'INSERT INTO `reply`(`u_id`, `comment_id`, `text`) VALUES ('. $uid . ','. $ans_to . ',"' . "TSAFA" . '")';
-	$result = mysql_query( $query );
+	$result = mysql_query ($query);
 	
-	$database -> close();
-
+	$database->close();
 ?>

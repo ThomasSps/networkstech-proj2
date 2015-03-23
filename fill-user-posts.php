@@ -1,11 +1,10 @@
-<script type="text/javascript" src="js/deletePost.js"></script>
 <?php
 	require_once 'db_connect.php';
 	require_once 'find-likes.php';
     require_once 'delete.php';
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
     
     global $uname;
 
@@ -17,19 +16,17 @@
     $query1 = 'SELECT * FROM `post` WHERE `u_id`= "' . $u_id . '" ORDER BY `date` DESC';
 	$result = mysql_query( $query1 );
     
-    if( !$result )
+    if (!$result)
 	{
 		echo "DB Error, could not query the database\n";
 	    echo 'MySQL Error: ' . mysql_error();
 		exit;
 	}
-	else if( mysql_num_rows($result) == 0 )
-	{
+	else if (mysql_num_rows($result) == 0)
 		echo "<h2>No posts found to show, come back later</h2>";
-	}
 	else
 	{ 
-		while( $row = mysql_fetch_array($result) )
+		while ($row = mysql_fetch_array($result))
 		{			
             $id_query = 'SELECT id FROM `post` WHERE `id`= "' . $row['id'] . '"';
             $id_result = mysql_query( $id_query );
@@ -44,32 +41,26 @@
 			echo "<post>";
 			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
             
-            if (check($usr_name, $_SESSION['uname']) == 1){
-                echo'</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>'. "</dt>";
-            }
-            else{
+            if (check($usr_name, $_SESSION['uname']) == 1)
+                echo'</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="15px" height="15px"></button>'. "</dt>";
+            else
                 echo'</i></dt>';
-            }
                 
 			echo '<div id="like">';
 			echo '<img id="ribon" src="img/ribon.png" width="35px" height="45px"/>';
-			if (getPostLikes($row['id']) < 10){
+			
+			if (getPostLikes($row['id']) < 10)
 				echo '<p class="like_counter" id="'. $row['id'] . '"> &nbsp;&nbsp;' . getPostLikes($row['id']) . '</p>';
-			}
-			else if (getPostLikes($row['id']) < 100){
+			else if (getPostLikes($row['id']) < 100)
 				echo '<p class="like_counter" id="'. $row['id'] . '"> &nbsp;' . getPostLikes($row['id']) . '</p>';
-
-			}
-			else{
-
+			else
 				echo '<p class="like_counter" id="'. $row['id'] . '">' . getPostLikes($row['id']) . '</p>';
-			}
+
 			echo '<p id="plus_one" onclick="addLike(' . $row['id'] . ')">+1</p>';
 			echo '</div>';
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
 		}
 	}
-
-	$database -> close( );
+	$database->close( );
 ?>

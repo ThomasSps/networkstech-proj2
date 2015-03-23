@@ -3,7 +3,7 @@
 	require_once 'find-likes.php';
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
 	session_start( );
 
@@ -29,7 +29,6 @@
 	$testresult = mysql_query($testquery);
 
 	if (mysql_num_rows($testresult) == 1){
-
 		$delete_query = 'DELETE FROM `post_like` WHERE `p_id` ="'. $_POST['liketo'] . '" AND `u_id` ="' . $uid . '"';
 		$d_result = mysql_query($delete_query);
 
@@ -42,7 +41,6 @@
 
 	}
 	else {
-
 		$query = 'INSERT INTO `post_like`(`p_id`, `u_id`) VALUES (' . $_POST['liketo'] . ',' . $uid . ')';
 		$result = mysql_query($query);
 
@@ -54,6 +52,6 @@
 		}
 	}
 	
-	echo getPostLikes( $_POST['liketo'] );
-	$database -> close();
+	echo getPostLikes($_POST['liketo']);
+	$database->close();
 ?>

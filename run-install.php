@@ -35,10 +35,9 @@
 			  <link rel="stylesheet" href="css/after-install.css">
 			  <link rel="stylesheet" href="css/animations.css">
 			</head>';
-
-	echo '
-	<body>
-  <div class="wrap">
+	echo
+	'<body>
+  	<div class="wrap">
 		<div class="avatar fadeIn">
       	<img src="img/login/avatar.png">
 		</div>
@@ -55,7 +54,6 @@
 			<br>
 			<button class="bigEntrance" type = "submit">Nice!</button>
 		</form>
-	</div>
-</body>'
-
+		</div>
+	</body>'
 ?>

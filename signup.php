@@ -10,7 +10,7 @@
 	$gg = 0;
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
 	if( isset($_POST["uname"]) && isset($_POST["pass"]) )
 	{
@@ -25,54 +25,42 @@
 		}
 		else 
 		{
-			if( mysql_num_rows( $result ) == 0 ) 
+			if (mysql_num_rows( $result ) == 0) 
 			{
-				//clear the query from previous
+				//Clear the query from previous
 				$query = "";
-				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`) VALUES ( '%s', '%s')", 
-					mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( password_hash($_POST["pass"], PASSWORD_DEFAULT) ) );
+				$query = sprintf( "INSERT INTO `user`(`uname`, `pass`) VALUES ( '%s', '%s')", mysql_real_escape_string( $_POST["uname"] ), mysql_real_escape_string( password_hash($_POST["pass"], PASSWORD_DEFAULT) ) );
 
 				$result = mysql_query( $query );
 
-				if( !$result ) 
+				if (!$result) 
 				{
 				    echo "DB Error, could not query the database\n";
 				    echo 'MySQL Error: ' . mysql_error();
 				    exit;
 				}
 				else 
-				{
 					$gg++;
-				}
 			}
 		}
 	}
 
-	$database -> close(); 
-
-
-	if( $gg )
-	{
-		echo 'Thanks for Registering , You will be redirected shortly...';	
+	if ($gg) {
+		echo 'Thanks for registering , You will be redirected shortly...';	
 		echo '<script type ="text/javascript">';
 		echo 'setTimeout(function(){ window.location =';
 		echo "\"http://" . $host . $uri . "/" . $extra_1 . "\"";
 		echo '; }, 2500);';
-
-		//$host$uri/$extra;
 		echo '</script>';
 	}
-	else
-	{
+	else {
 		echo 'User already exists. Try again with different user name...';	
 		echo '<script type ="text/javascript">';
 		echo 'setTimeout(function(){ window.location =';
 		echo "\"http://" . $host . $uri . "/" . $extra_2 . "\"";
 		echo '; }, 2500);';
-
-		//$host$uri/$extra;
 		echo '</script>';
 	}
 
-	exit;
+	$database->close(); 
 ?>

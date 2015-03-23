@@ -44,11 +44,12 @@ body {
   padding: 10px;
 }
 
-#user #user_tb td
+#user #user_tb td,
 #user_stats_tb td,
 #posts_stats_tb td {
+  overflow-x: hidden;
   text-align: left;
-  padding: 10px;
+  padding: 5px;
 }
 
 #leftcolumn, #midcolumn, #rightcolumn {

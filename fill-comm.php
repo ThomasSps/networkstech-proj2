@@ -1,11 +1,9 @@
-<script type="text/javascript" src="js/delete_post_comm.js"></script>
 <?php
-
 	require_once 'db_connect.php';
     require_once 'delete.php';
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
 	session_start();
 
@@ -36,16 +34,19 @@
 
 		while( $row = mysql_fetch_assoc( $alt_result ))
 		{
+			//Getting the id of the comment
             $id_query = 'SELECT id FROM `comment` WHERE `id`= "' . $row['id'] . '"';
             $id_result = mysql_query( $id_query );
 			$id_row = mysql_fetch_assoc( $id_result );
 			$comm_id = $id_row['id'];
             
+            //Getting the username
 			$myquery = 'SELECT `uname` FROM `user` WHERE `id` = ' . $row['u_id'];
 			$myresult = mysql_query($myquery);
 			$name = mysql_fetch_assoc($myresult);
 			$myid = $row['id'];
 			
+			//Getting the comment creator
             $c_query = 'SELECT user.uname AS pname FROM `user` INNER JOIN `post` ON user.id = post.u_id WHERE post.id = "' . $id . '"' ; 
             $c_result = mysql_query( $c_query );
 			$c_row = mysql_fetch_assoc( $c_result );
@@ -54,25 +55,17 @@
 			echo "<comment>";
 			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
             
-            if (check($name['uname'], $_SESSION['uname']) == 1){
-                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
-            }
-            
-            elseif (check($c_name, $_SESSION['uname']) == 1){
-                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="20px" height="20px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
-            }
-            
-            else {
+            if (check($name['uname'], $_SESSION['uname']) == 1)
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+            elseif (check($c_name, $_SESSION['uname']) == 1)
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+            else
                 echo "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
-            }      
-			
+
             echo '<dd >' . $row['text'] . '</dd>';
 			echo "</comment>";
-
 		}
 	}
 
-	$database -> close( );
-
-
+	$database->close( );
 ?>

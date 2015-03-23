@@ -5,10 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Asanz - Create Post</title>
-  
   <link rel="stylesheet" href="css/create-post.css">
   <link rel="stylesheet" href="css/navbar.css">
-  
   <script src="js/chars_left.js"></script>
   <script src="js/validatePost.js"></script>
 </head>
@@ -38,7 +36,6 @@
 				<div>
 				<hr>
 			</form>
-
 			<div id="chars"> Characters left: <input name="left" type="text" size="3" maxlength="3" value="512" readonly=""></div>
 		</article>
 	</body>

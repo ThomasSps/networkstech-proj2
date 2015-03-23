@@ -4,7 +4,7 @@
 	session_start( );
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
 	//TODO: take uname from $_GET request too :D 
 
@@ -14,7 +14,7 @@
 	$query = 'SELECT `id` FROM `user` WHERE `uname`="' . $uname . '"';
 	$result = mysql_query( $query );
 
-	if( mysql_num_rows($result) == 1 )
+	if (mysql_num_rows($result) == 1)
 	{
 		$row = mysql_fetch_assoc($result);
 	    $uid = $row['id'];
@@ -29,14 +29,12 @@
 	$query = 'INSERT INTO `post`(`u_id`, `title`, `text`) VALUES (' . $uid . ',"' . $_POST['title'] . '","' . $_POST['text'] . '")';
 	$result = mysql_query( $query );
 
-	if( !$result )
+	if (!$result)
 	{
 		echo "DB Error, could not query the database\n";
 	    echo 'MySQL Error: ' . mysql_error();
 		exit;
 	}
-
 	header('Location: index.php');
-
 	$database->close();
 ?>

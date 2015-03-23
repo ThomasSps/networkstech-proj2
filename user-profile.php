@@ -13,6 +13,8 @@
     <script type="text/javascript" src="js/autoUpdate.js"></script>
 	  <script type="text/javascript" src="js/add_comment.js"></script>
     <script type="text/javascript" src="js/add_like.js"></script>
+    <script type="text/javascript" src="js/deletePost.js"></script>
+    <script type="text/javascript" src="js/delete_post_comm.js"></script>
 </head>
 <html>
 	<body>

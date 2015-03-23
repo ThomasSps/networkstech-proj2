@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="js/autoUpdate.js"></script>
 	<script type="text/javascript" src="js/add_comment.js"></script>
 	<script type="text/javascript" src="js/add_like.js"></script>
+	<script type="text/javascript" src="js/delete_post_comm.js"></script>
 </head>
 <html>
 	<body>
@@ -22,7 +23,6 @@
 		    <li><a href="create-post.php">+Post</a></li>
 		    <li><a id="go-home" href="index.php">Home</a></li>
 		    <li><a href="user-profile.php">Dashboard</a></li>
-
 			    
 		    <!-- A sub-list item 
 		    <li><a href="">Menu Item</a>
@@ -33,8 +33,7 @@
 
 		    <li><a id="logout" href="logout.php">Logout</a></li>
 		    <div id="navigationright" style="float: right; cursor:default;">
-					<li><a> Active User: &nbsp; <?php include "active_user.php"; ?></a></li>
-						
+					<li><a> Active User: &nbsp; <?php include "active_user.php"; ?></a></li>	
 			</div>
 		  </ul>
 		</nav>
