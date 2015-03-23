@@ -26,7 +26,7 @@
 		exit;
 	}
 
-	$text = $_POST['comment'];
+	$text =  mysql_real_escape_string($_POST['comment']);
 
 
 

@@ -26,7 +26,7 @@
 		exit;
 	}
 
-	$query = 'INSERT INTO `post`(`u_id`, `title`, `text`) VALUES (' . $uid . ',"' . $_POST['title'] . '","' . $_POST['text'] . '")';
+	$query = 'INSERT INTO `post`(`u_id`, `title`, `text`) VALUES (' . $uid . ',"' .  mysql_real_escape_string($_POST['title']) . '","' .  mysql_real_escape_string($_POST['text']) . '")';
 	$result = mysql_query( $query );
 
 	if( !$result )
