@@ -94,7 +94,7 @@
           </div>
 		    </div>
         <div id="midcolumn">
-    		    <h1>My recent blog posts</h1>
+    		    <h1>My blog posts</h1>
     		    <dl id="my-posts-array"> <?php include 'fill-user-posts.php'; ?> </dl>
 		    </div>
 		    <div id="rightcolumn">

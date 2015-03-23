@@ -4,6 +4,8 @@ function DeletePost(id)
     if (x == true) {
         $.post("delete-post.php",{postid: id}, function(data) 
         {return data;});
+
+        location.reload();
     }
 }
 

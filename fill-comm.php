@@ -62,7 +62,19 @@
             else
                 echo "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
 
-            echo '<dd >' . $row['text'] . '</dd>';
+            echo '<dd class="comment" onclick="makeVisible(' . $comm_id . ');">' . $row['text'] . '</dd>';
+
+            $r_query = 'SELECT `reply`.`id`, `u_id`, `comment_id`, `text`, `date`, `uname` FROM `reply` INNER JOIN `user` ON `reply`.`u_id`=`user`.`id` WHERE `comment_id`=' . $comm_id;
+            $r_result = mysql_query( $r_query );
+            
+            echo '<div class="reply" id="' . $comm_id . '"> <dl id="reply-array">';
+            while( $r_row = mysql_fetch_assoc($r_result) )
+            {
+	            echo 
+	            '<dt> <i>?'. $r_row['uname'] . ' @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
+	            <dd>'. $r_row['text'] .'</i></dd>';	            
+        	}
+        	echo '</dl></div>';
 			echo "</comment>";
 		}
 	}
