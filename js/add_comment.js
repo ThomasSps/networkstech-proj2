@@ -52,7 +52,13 @@ function add_reply (id){
 
 
 function displaySelected (id){
+    
+    if (window.vid != null){
+        document.getElementById(window.vid).style.display = 'none';
+    }
 	window.vid = id;
+    
+    document.getElementById(id).style.display = 'block';
 
 	$.post("fill-comm.php", {
 			

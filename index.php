@@ -14,9 +14,10 @@
 	<script type="text/javascript" src="js/add_comment.js"></script>
 	<script type="text/javascript" src="js/add_like.js"></script>
 	<script type="text/javascript" src="js/delete_post_comm.js"></script>
+    <script type="text/javascript" src="js/unset_clicked.js"></script>
 </head>
 <html>
-	<body>
+	<body onload="unset_clicked(37)">
 	<header id="index-page">
 		<nav class="dropdownmenu">
 		  <ul>
