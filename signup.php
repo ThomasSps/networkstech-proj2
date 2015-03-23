@@ -46,7 +46,7 @@
 	}
 
 	if ($gg) {
-		echo 'Thanks for registering , You will be redirected shortly...';	
+		echo 'Thanks for registering, you will be redirected shortly...';	
 		echo '<script type ="text/javascript">';
 		echo 'setTimeout(function(){ window.location =';
 		echo "\"http://" . $host . $uri . "/" . $extra_1 . "\"";
