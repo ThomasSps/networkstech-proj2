@@ -24,7 +24,7 @@
 		exit;
 	}
 
-	$text = $_POST['comment'];
+	$text =  mysql_real_escape_string($_POST['comment']);
 
 	$query = 'INSERT INTO `comment`(`u_id`, `p_id`, `text`) VALUES ('. $uid . ','. $_SESSION['clicked']. ',"' . $text . '")';
 	$result = mysql_query( $query );
