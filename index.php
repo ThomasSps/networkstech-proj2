@@ -19,7 +19,7 @@
     <script type="text/javascript" src="js/unset_clicked.js"></script>
 </head>
 <html>
-	<body onload="unset_clicked(37)">
+	<body onload="unset_clicked()">
 	<header id="index-page">
 		<nav class="dropdownmenu">
 		  <ul>
