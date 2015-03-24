@@ -1,8 +1,6 @@
 var vid;
 
 function add_comment_listener(e) {
-    
-
     // If the user has pressed enter
     if ((window.event ? event.keyCode : e.which) == 13 && !e.shiftKey) {
 
@@ -62,7 +60,6 @@ function displaySelected (id){
 }
 
 function makeVisible( id ) {
-	
 	if (document.getElementById(id).style.display == "block")
 		document.getElementById(id).style.display = "none";
 	else

@@ -11,27 +11,27 @@ body {
   margin: 0;
 }    
 #wrapper {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 #leftcolumn, #rightcolumn {
-    position: absolute;
-    top: 40px;
-    bottom: 0px;
-    color: black;
+  position: absolute;
+  top: 40px;
+  bottom: 0px;
+  color: black;
 }
 #leftcolumn {
-    left: 0px;
-    bottom: 0px;
-    width: 65%;
-    margin-left: 5%;
-    margin-right: 0%;
+  left: 0px;
+  bottom: 0px;
+  width: 65%;
+  margin-left: 5%;
+  margin-right: 0%;
 }
 #rightcolumn {
-    right: 0px;
-    width: 30%;
-    border-left: dotted #cfd2db;
-    background-color: #f3f6ff;
+  right: 0px;
+  width: 30%;
+  border-left: dotted #cfd2db;
+  background-color: #f3f6ff;
 }
 
 #leftcolumn h1, h2 {
@@ -39,10 +39,10 @@ body {
 }
 
 #leftcolumn h1 {
-    font-size: 200%
+  font-size: 200%
 }
 #leftcolumn h2 {
-    font-size: 100%
+  font-size: 100%
 }
 
 #rightcolumn h1, h2 {
@@ -51,10 +51,11 @@ body {
 }
 
 #rightcolumn h1 {
-    font-size: 200%
+  font-size: 200%
 }
+
 #rightcolumn h2 {
-    font-size: 100%
+  font-size: 100%
 }
 
 #create-comm textarea[type="text"] {
