@@ -71,7 +71,7 @@
             while( $r_row = mysql_fetch_assoc($r_result) )
             {
 	            echo 
-	            '<dt class="slideLeft"> <i>?<a href=\'user-profile.php?uname=" . $name[\'uname\'] . "\'>". $name[\'uname\'] . "</a> @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
+	            '<dt class="slideLeft"> <i>?<a href="user-profile.php?uname='. $name['uname'] . '">' . $name['uname'] . '</a> @' . substr($r_row['date'], 0, strlen($r_row['date'])-3) . '</dt>
 	            <dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
         	}
         	echo '</dl>';
