@@ -53,7 +53,7 @@
 			$c_name = $c_row['pname'];
 			
 			echo "<comment>";
-			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "</a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
+			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
             
             if (check($name['uname'], $_SESSION['uname']) == 1)
                 echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='makeVisible(". $comm_id . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
@@ -68,11 +68,18 @@
             $r_result = mysql_query( $r_query );
             
             echo '<div class="reply" id="com' . $comm_id . '"> <dl id="reply-array">';
+            
             while( $r_row = mysql_fetch_assoc($r_result) )
             {
 	            echo 
-	            '<dt class="slideLeft"> <i>?<a href=\'user-profile.php?uname=" . $name[\'uname\'] . "\'>". $name[\'uname\'] . "</a> @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
-	            <dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
+	            '<dt class="slideLeft"> <i>? <a href="user-profile.php?uname='.$r_row['uname'].'">'.$r_row['uname'].'</a> @' . substr($r_row['date'], 0, strlen($r_row['date'])-3)  ; 
+                
+                if (check($r_row['uname'], $_SESSION['uname']) == 1)
+                    echo '<button type="button" id="delete" onclick=\'DeleteReply("' . $r_row['id']. '");\'><img src="img/delete.png" width="12px" height="12px"></button></dt>';
+                else
+                    echo '</dt>';
+	            
+                echo '<dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
         	}
         	echo '</dl>';
 

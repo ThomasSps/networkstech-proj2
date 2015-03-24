@@ -37,7 +37,7 @@
 			
 			//Print the posts of the blog
 			echo "<post>";
-			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
+			echo "<dt>" . $row['title'] ."&nbsp;&nbsp;<i>?<a href='user-profile.php?uname=" . $usr_name . "'>". $usr_name . "</a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3); 
            
             if (check($usr_name, $_SESSION['uname']) == 1)
                 echo '</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="15px" height="15px"><img/></button>';
