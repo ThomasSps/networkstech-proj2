@@ -71,8 +71,8 @@
             while( $r_row = mysql_fetch_assoc($r_result) )
             {
 	            echo 
-	            '<dt> <i>?'. $r_row['uname'] . ' @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
-	            <dd>'. $r_row['text'] .'</i></dd>';	            
+	            '<dt class="slideLeft"> <i>?'. $r_row['uname'] . ' @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
+	            <dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
         	}
         	echo '</dl></div>';
 			echo "</comment>";
