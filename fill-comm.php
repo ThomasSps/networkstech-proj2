@@ -71,8 +71,7 @@
             
             while( $r_row = mysql_fetch_assoc($r_result) )
             {
-	            echo 
-	            '<dt class="slideLeft"> <i>? <a href="user-profile.php?uname='.$r_row['uname'].'">'.$r_row['uname'].'</a> @' . substr($r_row['date'], 0, strlen($r_row['date'])-3)  ; 
+	            echo '<dt class="slideLeft"> <i>? <a href="user-profile.php?uname='.$r_row['uname'].'">'.$r_row['uname'].'</a> @' . substr($r_row['date'], 0, strlen($r_row['date'])-3)  ; 
                 
                 if (check($r_row['uname'], $_SESSION['uname']) == 1)
                     echo '<button type="button" id="delete" onclick=\'DeleteReply("' . $r_row['id']. '");\'><img src="img/delete.png" width="12px" height="12px"></button></dt>';
@@ -80,6 +79,7 @@
                     echo '</dt>';
 	            
                 echo '<dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
+
         	}
         	echo '</dl>';
 
