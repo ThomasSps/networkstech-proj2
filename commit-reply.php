@@ -28,7 +28,7 @@
 	$text =  mysql_real_escape_string($_POST['reply']);
 	$ans_to = $_POST['comment_id'];
 	
-	$query = 'INSERT INTO `reply`(`u_id`, `comment_id`, `text`) VALUES ('. $uid . ','. $ans_to . ',"' . "TSAFA" . '")';
+	$query = 'INSERT INTO `reply`(`u_id`, `comment_id`, `text`) VALUES ('. $uid . ','. $ans_to . ',"' . $text . '")';
 	$result = mysql_query ($query);
 	
 	$database->close();

@@ -43,12 +43,12 @@
                 echo '</i><button type="button" id="delete" onclick=\'DeletePost("' . $post_id . '");\'><img src="img/delete.png" width="15px" height="15px"><img/></button>';
             else
                 echo "</i>"; 
-			if ($_SESSION['clicked'] == $post_id){
-                echo '<div class="selected" id="' . $post_id . '" style="display: block; float: right;"> &gt; </dt>';
-            }
-            else{
-                echo '<div class="selected" id="' . $post_id . '" style="display: none; float: right;"> &gt; </dt>';
-            }
+
+			if ($_SESSION['clicked'] == $post_id)
+                echo '<div class="selected" id="sec' . $post_id . '" style="display: block; float: right;"> &gt; </div></dt>';
+            else
+                echo '<div class="selected" id="sec' . $post_id . '" style="display: none; float: right;"> &gt; </div></dt>';
+			
             echo '<div id="like">';
 			echo '<img id="ribon" src="img/ribon.png" width="35px" onclick="addLike(' . $row['id'] . ')" height="45px"/>';
 

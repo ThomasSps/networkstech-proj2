@@ -53,28 +53,33 @@
 			$c_name = $c_row['pname'];
 			
 			echo "<comment>";
-			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "<a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
+			echo "<dt>" ."?<a href='user-profile.php?uname=" . $name['uname'] . "'>". $name['uname'] . "</a>&nbsp;&nbsp;@" .  substr($row['date'], 0, strlen($row['date'])-3);
             
             if (check($name['uname'], $_SESSION['uname']) == 1)
-                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='makeVisible(". $comm_id . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
             elseif (check($c_name, $_SESSION['uname']) == 1)
-                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+                echo '<button type="button" id="delete" onclick=\'DeleteComm("' . $comm_id . '");\'><img src="img/delete.png" width="12px" height="12px"></button>' . "<a onclick='makeVisible(". $comm_id . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
             else
-                echo "<a onclick='add_reply(". $myid . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
+                echo "<a onclick='makeVisible(". $comm_id . ");' style='cursor: pointer; text-align:right; margin-top: 5px; float: right; font-size: 15px;'>" . "[Reply]" . "</a></dt>";
 
-            echo '<dd class="comment" onclick="makeVisible(' . $comm_id . ');">' . $row['text'] . '</dd>';
+            echo '<dd class="comment">' . $row['text'] . '</dd>';
 
             $r_query = 'SELECT `reply`.`id`, `u_id`, `comment_id`, `text`, `date`, `uname` FROM `reply` INNER JOIN `user` ON `reply`.`u_id`=`user`.`id` WHERE `comment_id`=' . $comm_id;
             $r_result = mysql_query( $r_query );
             
-            echo '<div class="reply" id="' . $comm_id . '"> <dl id="reply-array">';
+            echo '<div class="reply" id="com' . $comm_id . '"> <dl id="reply-array">';
             while( $r_row = mysql_fetch_assoc($r_result) )
             {
 	            echo 
-	            '<dt class="slideLeft"> <i>?'. $r_row['uname'] . ' @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
+	            '<dt class="slideLeft"> <i>?<a href=\'user-profile.php?uname=" . $name[\'uname\'] . "\'>". $name[\'uname\'] . "</a> @' . substr($row['date'], 0, strlen($row['date'])-3) . '</dt>
 	            <dd class="slideLeft">'. $r_row['text'] .'</i></dd>';	            
         	}
-        	echo '</dl></div>';
+        	echo '</dl>';
+
+        	//This is the text area
+        	echo '<form class="slideLeft" id="newreply" name="newreply" method="POST"><textarea id="reply'.$comm_id.'" name="reply' . $comm_id . '" type="text" placeholder="Write a reply..." onfocus="this.placeholder = \'\'" onblur="this.placeholder =\'Write a reply...\' " onkeydown="add_reply(event,' . $myid  . ');" autocomplete = off  ></textarea></form>';
+
+        	echo '</div>';
 			echo "</comment>";
 		}
 	}

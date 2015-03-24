@@ -75,6 +75,23 @@ body {
   background-color: rgba(256, 256, 256, 0.4);
 }
 
+#newreply textarea[type="text"] {
+  border-radius: 7px 7px 0px 0px ;
+  border: 0;
+  resize: none;
+  font-family: "Lato";
+  font-style: italic;
+  color: gray;
+  padding: 5px;
+  width: 70%;
+  height: 10%;
+  left: 25%;
+  right: 0%;
+  margin-top: 5px;
+  position: relative;
+  background-color: rgba(256, 256, 256, 0.4);
+}
+
 dl#posts-array {
   position: relative;
   bottom: 0px;
@@ -106,7 +123,7 @@ dl#posts-array  dd {
 
 dl#posts-array dd:hover {
   cursor: pointer;
-}
+} 
 
 dl#comm-array {
   position: relative;
@@ -133,7 +150,6 @@ dl#comm-array  dd.comment {
   background: #fff;
   word-break: break-all;
   color: #3e3e40;
-  cursor: pointer;
 }
 
 div.reply {
@@ -155,7 +171,7 @@ dl#reply-array dt {
 
 dl#reply-array dd {
   margin-left: 35px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   padding: 5px;
   font-size: 12px;
   border-bottom-left-radius: 5px;

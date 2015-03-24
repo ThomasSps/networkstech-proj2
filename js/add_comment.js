@@ -25,31 +25,47 @@ function add_comment_listener(e) {
     }
 }
 
-//TODO: Visualize replies!!!!!!!!!!!
-function add_reply (id){
+
+function add_reply (e, id){
 	
 	var myid = id;
-	
-	$.post("commit-reply.php", {
-		comment_id: myid
-		//reply: text
 
-	}, function(data) {
-		$('#newcomment')[0].reset();
-		$('#comment').blur(); // To reset form fields
+	if ((window.event ? event.keyCode : e.which) == 13 && !e.shiftKey) {
+
+		var text = $("#reply"+id).val();
+
+		if (text.length < 1)
+			text = "I am a douchebag and I posted an empty reply";
+
+		// Returns successful data submission message when the entered information is stored in database.
+		$.post("commit-reply.php", {
 		
-		displaySelected( window.vid );
-	});
+		comment_id: myid,
+		reply: text
+
+		}, function(data) {
+				$('#newreply')[0].reset();
+				$('#reply').blur(); // To reset form fields
+				displaySelected( window.vid );
+			});
+    }
+    else {
+        return true;
+    }
+
+
 }
+
 
 function displaySelected (id){
     
     if (window.vid != null){
-        document.getElementById(window.vid).style.display = 'none';
+        document.getElementById("sec"+window.vid).style.display = 'none';
     }
+
 	window.vid = id;
     
-    document.getElementById(id).style.display = 'block';
+    document.getElementById("sec"+id).style.display = 'block';
 
 	$.post("fill-comm.php", {
 		postid: id
@@ -60,8 +76,8 @@ function displaySelected (id){
 }
 
 function makeVisible( id ) {
-	if (document.getElementById(id).style.display == "block")
-		document.getElementById(id).style.display = "none";
+	if (document.getElementById("com"+id).style.display == "block")
+		document.getElementById("com"+id).style.display = "none";
 	else
-		document.getElementById(id).style.display = "block";
+		document.getElementById("com"+id).style.display = "block";
 }
