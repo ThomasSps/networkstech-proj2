@@ -64,7 +64,7 @@
 
             echo '<dd class="comment">' . $row['text'] . '</dd>';
 
-            $r_query = 'SELECT `reply`.`id`, `u_id`, `comment_id`, `text`, `date`, `uname` FROM `reply` INNER JOIN `user` ON `reply`.`u_id`=`user`.`id` WHERE `comment_id`=' . $comm_id;
+            $r_query = 'SELECT `reply`.`id`, `u_id`, `comment_id`, `text`, `date`, `uname` FROM `reply` INNER JOIN `user` ON `reply`.`u_id`=`user`.`id` WHERE `comment_id`=' . $comm_id . ' ORDER BY `reply`.`date` ASC';
             $r_result = mysql_query( $r_query );
             
             echo '<div class="reply" id="com' . $comm_id . '"> <dl id="reply-array">';
