@@ -212,7 +212,7 @@ dl#reply-array dd {
   text-decoration: none;
   position:absolute;    
   color:black; 
-  font-size:15px;
+  font-size:19px;
   cursor: pointer;
   display: none;
    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */

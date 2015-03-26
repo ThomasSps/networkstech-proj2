@@ -50,7 +50,7 @@
                 echo '<div class="selected" id="sec' . $post_id . '" style="display: none; float: right;"> &gt; </div></dt>';
 			
             echo '<div id="like">';
-			echo '<img id="ribon" src="img/ribon.png" width="35px" onclick="addLike(' . $row['id'] . ')" height="45px"/>';
+			echo '<img id="ribon" src="img/ribon.png" width="35px" height="45px"/>';
 
 			if (getPostLikes($row['id']) < 10)
 				echo '<p class="like_counter" id="'. $row['id'] . '"> &nbsp;&nbsp;' . getPostLikes($row['id']) . '</p>';
@@ -59,7 +59,7 @@
 			else
 				echo '<p class="like_counter" id="'. $row['id'] . '">' . getPostLikes($row['id']) . '</p>';
 			
-			echo '<p id="plus_one">+1</p>';
+			echo '<p id="plus_one" onclick="addLike(' . $row['id'] . ')">+1</p>';
 			echo '</div>';
 			echo '<dd onclick="displaySelected(' . $row['id'] . ');">' . $row['text'] . '</dd>';
 			echo "</post>";
