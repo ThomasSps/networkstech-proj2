@@ -18,6 +18,10 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `asanz`
+
+CREATE DATABASE IF NOT EXISTS `asanz` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `asanz`; 
+
 --
 
 -- --------------------------------------------------------
@@ -36,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   PRIMARY KEY (`id`),
   KEY `u_id` (`u_id`,`p_id`),
   KEY `p_id` (`p_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=75 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=0 ;
 
 -- --------------------------------------------------------
 
@@ -72,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   KEY `u_id_3` (`u_id`),
   KEY `u_id_4` (`u_id`),
   KEY `u_id_5` (`u_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=0 ;
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `reply` (
   KEY `id` (`id`,`comment_id`),
   KEY `comment_id` (`comment_id`),
   KEY `u_id` (`u_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=0 ;
 
 -- --------------------------------------------------------
 
@@ -120,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pass` varchar(255) COLLATE utf8_bin NOT NULL,
   `since` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=74 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=0 ;
 
 --
 -- Constraints for dumped tables

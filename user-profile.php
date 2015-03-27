@@ -8,16 +8,18 @@
 
 	  <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/user-profile.css">
+    <link rel="stylesheet" href="css/animations.css">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+
     <script type="text/javascript" src="js/autoUpdate.js"></script>
 	  <script type="text/javascript" src="js/add_comment.js"></script>
     <script type="text/javascript" src="js/add_like.js"></script>
-    <script type="text/javascript" src="js/deletePost.js"></script>
     <script type="text/javascript" src="js/delete_post_comm_rep.js"></script>
+    <script type="text/javascript" src="js/unset_clicked.js"></script>
 </head>
 <html>
-	<body>
+  <body onload="unset_clicked()">
 	<header id="user-page">
 		<nav class="dropdownmenu">
 		  <ul>

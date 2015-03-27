@@ -10,11 +10,6 @@ function unset_clicked (id){
 		
 	}, function(data) {
         
-       
-            
+              
 	});
-    
-        
-    
-	
 }

@@ -4,7 +4,7 @@
     require_once 'delete.php';
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
     session_start();
     

@@ -2,12 +2,12 @@
 	require_once 'db_connect.php';
 
 	$database = new DB_Provider();
-	$database -> connect();
+	$database->connect();
 
 	if( $database->selectDB() )
 	{
 	 	$alt_query = "DROP DATABASE `asanz`";
-	 	mysql_query( $alt_query );
+	 	$result = mysql_query( $alt_query );
 	}
 
  	$path = $_SERVER['DOCUMENT_ROOT'];
@@ -15,11 +15,11 @@
 
 	$sql_contents = file_get_contents($sql_filename);
 	$sql_contents = explode(";", $sql_contents);
-	     
+
 	foreach($sql_contents as $query) 
 	{
 		$result = mysql_query($query);
-	        
+
         if (!$result && $query=="")
             echo "Error on import of ".$query;
 	}

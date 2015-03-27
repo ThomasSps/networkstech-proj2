@@ -5,7 +5,7 @@ function DeletePost(id)
         $.post("delete-post.php",{postid: id}, function(data) 
         {return data;});
 
-        location.reload();
+        window.location.reload(true);
     }
 }
 

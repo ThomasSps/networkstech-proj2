@@ -13,20 +13,17 @@
 ##Installation notes
 
 
-- *Import to an MySQL Database the "/sql/asanz.sql" file, use phpMyAdmin.*
-- *Configure your Database details to the "config.php" file.*
-- *Start developing!*
+- *Change your server details on "config.php".*
+- *Run (actually browse to) the "install.php" file.*
+- *Enjoy and start developing!*
 
 ----------
 
+
 ##MUST TODO: List
 
- - Show Selected (Highlight Post)
- - Reply functionality
- - Case Sensitive Username checks
- - Rework icons
- - Check comments for code (e.g  echo "asasa")
-
+ - All done!
+ 
 
 ----------
 

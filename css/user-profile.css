@@ -52,6 +52,9 @@ body {
   padding: 5px;
 }
 
+
+
+
 #leftcolumn, #midcolumn, #rightcolumn {
     position: absolute;
     top: 40px;
@@ -127,6 +130,34 @@ body {
     font-size: 100%
 }
 
+
+dl#comm-array {
+  position: relative;
+  bottom: 0px;
+  height: 70%;
+  margin: 0;
+  overflow:hidden; 
+  overflow-y:auto;
+}
+
+dl#comm-array  dt {
+  padding: 10px;
+  margin-left: 2px;
+  font-size: 15px;
+  word-break: break-all;
+  background: #cfd2db;
+  color: #3e3e40;
+}
+
+dl#comm-array  dd.comment {
+  font-size: 13px;
+  padding: 15px;
+  margin-left: 0;
+  background: #fff;
+  word-break: break-all;
+  color: #3e3e40;
+}
+
 #create-comm textarea[type="text"] {
   border-radius: 7px 7px 0px 0px ;
   border: 0;
@@ -178,33 +209,50 @@ dl#my-posts-array dd:hover {
   cursor: pointer;
 }
 
-dl#comm-array {
-  position: relative;
-  bottom: 0px;
-  height: 70%;
+
+div.reply {
+  display: none; 
+}
+
+dl#reply-array{
   margin: 0;
-  overflow:hidden; 
-  overflow-y:auto;
+  padding: 0;
 }
 
-dl#comm-array  dt {
-  padding: 10px;
-  margin-left: 2px;
-  font-size: 16px;
-  word-break: break-all;
-  background: #cfd2db;
-  color: #3e3e40;
-}
-
-dl#comm-array  dd {
-  font-size: 12px;
-  padding: 15px;
-  word-break: break-all;
-  margin-left: 0;
+dl#reply-array dt {
+  padding: 5px;
+  margin-left: 20px;
+  font-size: 14px;
   border-bottom-left-radius: 5px;
-  background: #fff;
-  color: #3e3e40;
+  background: #e7e8ed;
 }
+
+dl#reply-array dd {
+  margin-left: 35px;
+  margin-bottom: 0px;
+  padding: 5px;
+  font-size: 12px;
+  border-bottom-left-radius: 5px;
+  background: white;
+}
+
+#newreply textarea[type="text"] {
+  border-radius: 7px 7px 0px 0px ;
+  border: 0;
+  resize: none;
+  font-family: "Lato";
+  font-style: italic;
+  color: gray;
+  padding: 5px;
+  width: 70%;
+  height: 10%;
+  left: 25%;
+  right: 0%;
+  margin-top: 5px;
+  position: relative;
+  background-color: rgba(256, 256, 256, 0.4);
+}
+
 #ribon {
   position: absolute;
   margin-left: 5px;
